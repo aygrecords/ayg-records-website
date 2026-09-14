@@ -1,4 +1,12 @@
-backend:
+  - name: "artists"
+    label: "Artists"
+    folder: "content/artists"
+    create: true
+    fields:  # ← Add this line and indent all field definitions below it
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Instagram Handle", name: "instagram", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Short Bio", name: "bio", widget: "text", required: false }backend:
   name: git-gateway
   branch: main
 
