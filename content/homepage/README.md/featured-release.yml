@@ -1,8 +1,8 @@
 title: "AYG RECORDS"
 artist: "Lil Rashee"
-description: "A new release from AYG Records. Stream now on your preferred platform."
+description: "A new release from AYG Records. STREAM NOW right from your phone."
 cover_art: ""
-listen_link: "https://youtu.be/EclbiW78Lgs?is=QR9MUytmQutHQq3L#"
+listen_link: "#https://youtu.be/6h01zM8MSvM?is=GKJh1d3DOuV9EA80#"
 Connect the existing content/*.yml files to the existing AYG Records homepage so that content edited through /admin is reflected on the live homepage.
 
 Do not redesign anything. Do not replace the existing site. Do not create a new visual system.
