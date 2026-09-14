@@ -1,26 +1,332 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AYG Records — Site Admin</title>
+  <title>AYG Records — Independent Music Label</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ccc;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 4rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin: 1rem 0;
+      line-height: 1.2;
+      white-space: pre-wrap;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subcopy {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      background: #ccc;
+    }
+
+    .btn-secondary {
+      border: 2px solid #fff;
+      background: transparent;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .photo-credit {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 0.5rem;
+      text-align: right;
+    }
+
+    .featured-section {
+      background: #111;
+      padding: 4rem 2rem;
+      border-top: 1px solid #333;
+    }
+
+    .featured-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .featured-cover img {
+      width: 100%;
+      border-radius: 8px;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .featured-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .featured-artist {
+      font-size: 1.1rem;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-description {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .listen-link {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .listen-link:hover {
+      background: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #333;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .featured-container {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        margin: 0 0.75rem;
+        font-size: 0.8rem;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Decap CMS. Reads ./config.yml, uses Netlify Identity + Git Gateway
-       (or GitHub/GitLab backend) for login, and writes edits as commits
-       to the site's git repo. Requires the site to be deployed via
-       Netlify (or another supported host) — this page does nothing
-       useful opened as a local file. -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <header>
+    <div class="logo">
+      <img src="/assets/images/ayg-logo.png" alt="AYG Records" />
+    </div>
+    <nav>
+      <a href="#music">Music</a>
+      <a href="#studio">Studio</a>
+      <a href="#about">About</a>
+      <a href="/admin">Admin</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <!-- Hero Section (loaded from content/homepage/hero.yml) -->
+    <section class="hero" id="music">
+      <div class="hero-content">
+        <div class="hero-eyebrow" id="hero-eyebrow">AYG RECORDS</div>
+        <h1 id="hero-headline">Independent music.<br>Built from the ground up.</h1>
+        <p class="hero-subcopy" id="hero-subcopy">AYG Records is an independent label built by artists, for artists — starting with a closet turned into a stage.</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary" id="primary-cta">Listen Now</a>
+          <a href="#studio" class="btn btn-secondary" id="secondary-cta">Explore AYG</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img id="hero-photo" src="/assets/images/hero-lil-rashee.png" alt="Hero" />
+        <div class="photo-credit" id="photo-credit">Lil Rashee — @lilrashee</div>
+      </div>
+    </section>
+
+    <!-- Featured Release (loaded from content/homepage/featured-release.yml) -->
+    <section class="featured-section" id="studio">
+      <div class="featured-container">
+        <div class="featured-cover">
+          <img id="cover-art" src="" alt="Cover Art" />
+        </div>
+        <div class="featured-content">
+          <h2 id="featured-title">Title coming soon</h2>
+          <p class="featured-artist" id="featured-artist">Lil Rashee</p>
+          <p class="featured-description" id="featured-description">A new release from AYG Records. Stream now on your preferred platform.</p>
+          <a href="#" class="listen-link" id="listen-link">Listen Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 AYG Records. All rights reserved.</p>
+  </footer>
+
   <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+    // Load content from YAML files
+    async function loadContent() {
+      try {
+        // Load hero content
+        const heroResponse = await fetch('/content/homepage/hero.yml');
+        const heroText = await heroResponse.text();
+        const heroData = parseYAML(heroText);
+        
+        if (heroData) {
+          document.getElementById('hero-eyebrow').textContent = heroData.eyebrow || 'AYG RECORDS';
+          document.getElementById('hero-headline').textContent = heroData.headline || 'Independent music.\nBuilt from the ground up.';
+          document.getElementById('hero-subcopy').textContent = heroData.subcopy || 'AYG Records is an independent label built by artists, for artists.';
+          document.getElementById('primary-cta').textContent = heroData.primary_cta || 'Listen Now';
+          document.getElementById('primary-cta').href = heroData.primary_cta_link || '#music';
+          document.getElementById('secondary-cta').textContent = heroData.secondary_cta || 'Explore AYG';
+          document.getElementById('secondary-cta').href = heroData.secondary_cta_link || '#studio';
+          if (heroData.photo) document.getElementById('hero-photo').src = heroData.photo;
+          if (heroData.photo_credit) document.getElementById('photo-credit').textContent = heroData.photo_credit;
         }
-      });
+
+        // Load featured release content
+        const releaseResponse = await fetch('/content/homepage/featured-release.yml');
+        const releaseText = await releaseResponse.text();
+        const releaseData = parseYAML(releaseText);
+        
+        if (releaseData) {
+          document.getElementById('featured-title').textContent = releaseData.title || 'Title coming soon';
+          document.getElementById('featured-artist').textContent = releaseData.artist || 'Lil Rashee';
+          document.getElementById('featured-description').textContent = releaseData.description || 'A new release from AYG Records.';
+          if (releaseData.cover_art) document.getElementById('cover-art').src = releaseData.cover_art;
+          if (releaseData.listen_link) document.getElementById('listen-link').href = releaseData.listen_link;
+        }
+      } catch (error) {
+        console.log('Note: YAML files not loading (expected if not deployed via Netlify). Using defaults.');
+      }
     }
+
+    // Simple YAML parser for basic key-value pairs
+    function parseYAML(yamlText) {
+      const data = {};
+      const lines = yamlText.split('\n');
+      
+      for (const line of lines) {
+        if (!line.trim() || line.trim().startsWith('#')) continue;
+        
+        const match = line.match(/^(\w+):\s*"(.*)"|^(\w+):\s*(.+)/);
+        if (match) {
+          const key = match[1] || match[3];
+          const value = (match[2] || match[4] || '').trim();
+          data[key] = value;
+        }
+      }
+      
+      return data;
+    }
+
+    // Load content when page loads
+    document.addEventListener('DOMContentLoaded', loadContent);
   </script>
 </body>
 </html>
