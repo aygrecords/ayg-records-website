@@ -3,3 +3,29 @@ artist: "Lil Rashee"
 description: "A new release from AYG Records. Stream now on your preferred platform."
 cover_art: ""
 listen_link: "https://youtu.be/EclbiW78Lgs?is=QR9MUytmQutHQq3L#"
+Connect the existing content/*.yml files to the existing AYG Records homepage so that content edited through /admin is reflected on the live homepage.
+
+Do not redesign anything. Do not replace the existing site. Do not create a new visual system.
+
+Preserve the current:
+- AYG branding
+- logo placement
+- colors
+- typography
+- hero layout
+- navigation
+- animations
+- spacing
+- responsive/mobile behavior
+
+Use the existing YAML content as the source of truth and do not invent any AYG facts, song titles, artists, statistics, or releases.
+
+After wiring it:
+1. Make a test edit through /admin.
+2. Confirm the corresponding homepage content changes.
+3. Confirm the change survives a page refresh.
+4. Confirm there are no build/runtime errors.
+
+Do not build Featured Release yet.
+
+When finished, stop and report exactly what was connected and what you tested.
