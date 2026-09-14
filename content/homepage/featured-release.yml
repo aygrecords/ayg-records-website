@@ -1,4 +1,4 @@
-title: "Title coming soon"
+title: "AYG RECORDS"
 artist: "Lil Rashee"
 description: "A new release from AYG Records. Stream now on your preferred platform."
 cover_art: ""
@@ -15,7 +15,7 @@ listen_link: "#"
 
 <header class="site-header">
   <div class="wrap">
-    <a href="index.html" class="wordmark">AY<span>G</span> RECORDS</a>
+    <a href="index.html" class="wordmark">AYG</span> RECORDS</a>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="music.html">Music</a>
