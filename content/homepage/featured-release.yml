@@ -84,3 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.nav-links a').forEach(function (a) {
     if (a.getAttribute('href') === path) a.classList.add('active');
   });
+requestAnimationFrame(function () {
+  requestAnimationFrame(function () { hero.classList.add('reveal-in'); });
+});
