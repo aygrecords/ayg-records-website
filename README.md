@@ -1,0 +1,118 @@
+# AYG Records Website — Project Package
+
+This folder is the complete current state of the aygrecords.com project:
+the homepage (hero section, built and approved), the real AYG logo, the
+real hero photo, and the admin/login system scaffold (Decap CMS).
+
+## What's in here
+
+```
+ayg-records-website/
+├── index.html                        the website (currently: hero only)
+├── netlify.toml                      tells Netlify how to publish the site
+├── assets/
+│   ├── images/
+│   │   ├── ayg-logo.png              the real AYG logo, as supplied
+│   │   └── hero-lil-rashee.png       the real hero photo, as supplied
+│   └── uploads/                      empty — future CMS-uploaded files land here
+├── admin/
+│   ├── index.html                    the login/edit screen (Decap CMS)
+│   └── config.yml                    what fields you'll be able to edit
+└── content/
+    ├── homepage/
+    │   ├── hero.yml                  current hero text, seeded
+    │   └── featured-release.yml      placeholder — no real release yet
+    ├── artists/                      empty — Lil Rashee's page will live here later
+    └── downloads/
+        └── press-kit.yml             placeholder — no PDF yet
+```
+
+Nothing here has been redesigned or altered — this is exactly the
+approved hero build, packaged for a real repo instead of one big file.
+
+## Important: the admin login won't work until you deploy it
+
+Opening `admin/index.html` on your own computer will not let you log in.
+The login system needs three things to exist, in this order:
+
+1. This code sitting in a GitHub repository
+2. That repository deployed through Netlify
+3. Netlify Identity + Git Gateway turned on for that Netlify site
+
+Once all three are done, `aygrecords.com/admin` becomes a real login
+screen, and saving an edit there commits straight to GitHub and
+redeploys the site automatically.
+
+---
+
+## Step-by-step: get this into your `ayg-records-website` GitHub repo
+
+**You said you already have a repo named `ayg-records-website`.** Here's
+the easiest way in — no command line, no Git knowledge needed.
+
+### Step 1 — Open your repo on GitHub.com
+
+1. Go to [github.com](https://github.com) and log in.
+2. Open your repository: `ayg-records-website`.
+
+### Step 2 — Upload the files
+
+1. Click the green **"Add file"** button (top right of the file list), then choose **"Upload files"**.
+2. Unzip the package I gave you (`ayg-records-website.zip`) on your computer first, so you have a normal folder.
+3. Open that unzipped folder and **drag the entire contents** (not the folder itself — the files and folders *inside* it: `index.html`, `admin`, `assets`, `content`, `netlify.toml`) into the GitHub upload box in your browser.
+4. Wait for the upload progress to finish (GitHub will show each file).
+5. Scroll down to **"Commit changes"**. You can leave the default message, or write something like "Add homepage hero and admin scaffold."
+6. Click the green **"Commit changes"** button.
+
+Your repo now contains the full project.
+
+---
+
+## Step-by-step: deploy it on Netlify
+
+### Step 3 — Connect Netlify to your GitHub repo
+
+1. Go to [app.netlify.com](https://app.netlify.com) and log in (or sign up — it's free for this).
+2. Click **"Add new site"** → **"Import an existing project"**.
+3. Choose **"Deploy with GitHub"** and authorize Netlify to access your GitHub account if asked.
+4. Select the `ayg-records-website` repository from the list.
+5. On the settings screen, leave everything as-is (the `netlify.toml` file already tells Netlify what to do) and click **"Deploy site"**.
+6. Wait about a minute — Netlify will give you a temporary address like `random-name-123.netlify.app`. Open it to confirm the homepage loads.
+
+### Step 4 — Turn on Identity (this powers the login)
+
+1. In your new Netlify site, click the **"Site configuration"** tab (left sidebar).
+2. Click **"Identity"** in that sidebar.
+3. Click **"Enable Identity"**.
+4. Scroll to **"Registration"** and set it to **"Invite only"** (so only you can create logins — recommended).
+5. Scroll to **"Services"** and find **"Git Gateway"**. Click **"Enable Git Gateway"**. This is what lets a logged-in edit actually save back to GitHub.
+
+### Step 5 — Invite yourself as a user
+
+1. Still under **Identity**, click the **"Invite users"** button.
+2. Enter your own email address and send the invite.
+3. Check that email, click the confirmation link, and set a password.
+
+### Step 6 — Log in to the admin panel
+
+1. Go to `your-site-address.netlify.app/admin`.
+2. Log in with the email and password from Step 5.
+3. You should now see an editor for the Homepage, Downloads, and Artists sections.
+
+---
+
+## Optional: connect aygrecords.com as the real domain
+
+Once you've confirmed everything works on the `.netlify.app` address:
+
+1. In Netlify, go to **"Domain management"** in Site configuration.
+2. Click **"Add a domain"** and enter `aygrecords.com`.
+3. Netlify will show you DNS records to add wherever you bought the domain (GoDaddy, Namecheap, etc.). If you tell me where the domain is registered, I can walk you through those exact settings.
+
+---
+
+## What still needs to happen before we move to the next homepage section
+
+- Confirm the hero looks right on the live Netlify link
+- Decide where the free PDF should be hosted (upload it via the admin panel's Downloads section once Identity is set up, or send it to me and I'll wire in the button placement)
+- Send over whatever you want built next (Featured Release section)

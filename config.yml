@@ -1,0 +1,58 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Netlify Identity + Git Gateway handles login. Every edit made in
+# /admin becomes a commit to this repo, which redeploys the site.
+# No custom server or database required.
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "content/homepage/hero.yml"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string", default: "AYG RECORDS" }
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Subcopy", name: "subcopy", widget: "text" }
+          - { label: "Primary Button Label", name: "primary_cta", widget: "string" }
+          - { label: "Primary Button Link", name: "primary_cta_link", widget: "string" }
+          - { label: "Secondary Button Label", name: "secondary_cta", widget: "string" }
+          - { label: "Secondary Button Link", name: "secondary_cta_link", widget: "string" }
+          - { label: "Hero Photo", name: "photo", widget: "image" }
+          - { label: "Photo Credit", name: "photo_credit", widget: "string", required: false }
+
+      - name: "featured_release"
+        label: "Featured Release"
+        file: "content/homepage/featured-release.yml"
+        fields:
+          - { label: "Song Title", name: "title", widget: "string", default: "Title coming soon" }
+          - { label: "Artist", name: "artist", widget: "string", default: "Lil Rashee" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Cover Art", name: "cover_art", widget: "image" }
+          - { label: "Listen Link", name: "listen_link", widget: "string" }
+
+  - name: "artists"
+    label: "Artists"
+    folder: "content/artists"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Instagram Handle", name: "instagram", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Short Bio", name: "bio", widget: "text", required: false }
+
+  - name: "downloads"
+    label: "Downloads"
+    files:
+      - name: "press_kit"
+        label: "Free PDF Download"
+        file: "content/downloads/press-kit.yml"
+        fields:
+          - { label: "Button Label", name: "label", widget: "string", default: "Download" }
+          - { label: "PDF File", name: "file", widget: "file" }
