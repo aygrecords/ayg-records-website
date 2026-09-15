@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: owner-name/repo-name
+  name: git-gateway
   branch: main
 
 # Netlify Identity + Git Gateway handles login. Every edit made in
