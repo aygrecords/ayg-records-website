@@ -13,4 +13,4 @@ collections:
       - { label: "Hero Headline", name: "hero_headline", widget: "string" }
       - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
       - { label: "CTA Button Text", name: "cta_text", widget: "string" }
-      # Add exact keys matching your current content/*homepage/hero.yml
+      # Add exact keys matching your current content/*hero.yml
