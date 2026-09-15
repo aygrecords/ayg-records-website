@@ -1,1 +1,107 @@
-# Admin Configuration
+# Admin Configuration 
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+media_library:
+  name: default
+
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "content/homepage/hero.yml"
+        fields:
+          - label: "Eyebrow"
+            name: "eyebrow"
+            widget: "string"
+            required: false
+
+          - label: "Headline"
+            name: "headline"
+            widget: "string"
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            required: false
+
+          - label: "Hero Image"
+            name: "image"
+            widget: "image"
+            required: false
+
+          - label: "Primary Button Text"
+            name: "primary_button_text"
+            widget: "string"
+            required: false
+
+          - label: "Primary Button URL"
+            name: "primary_button_url"
+            widget: "string"
+            required: false
+
+          - label: "Secondary Button Text"
+            name: "secondary_button_text"
+            widget: "string"
+            required: false
+
+          - label: "Secondary Button URL"
+            name: "secondary_button_url"
+            widget: "string"
+            required: false
+
+      - name: "featured-release"
+        label: "Featured Release"
+        file: "content/homepage/featured-release.yml"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+
+          - label: "Artist"
+            name: "artist"
+            widget: "string"
+            required: false
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            required: false
+
+          - label: "Artwork"
+            name: "artwork"
+            widget: "image"
+            required: false
+
+          - label: "Listen URL"
+            name: "listen_url"
+            widget: "string"
+            required: false
+
+  - name: "downloads"
+    label: "Downloads"
+    files:
+      - name: "press-kit"
+        label: "Press Kit"
+        file: "content/downloads/press-kit.yml"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+            required: false
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            required: false
+
+          - label: "Press Kit File"
+            name: "file"
+            widget: "file"
+            required: false
