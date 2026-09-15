@@ -18,7 +18,7 @@ collections:
           - label: "Eyebrow"
             name: "eyebrow"
             widget: "string"
-            required: false
+            required: true
 
           - label: "Headline"
             name: "headline"
@@ -27,32 +27,32 @@ collections:
           - label: "Description"
             name: "description"
             widget: "text"
-            required: false
+            required: true
 
           - label: "Hero Image"
             name: "image"
             widget: "image"
-            required: false
+            required: true
 
           - label: "Primary Button Text"
             name: "primary_button_text"
             widget: "string"
-            required: false
+            required: true
 
           - label: "Primary Button URL"
             name: "primary_button_url"
             widget: "string"
-            required: false
+            required: true
 
           - label: "Secondary Button Text"
             name: "secondary_button_text"
             widget: "string"
-            required: false
+            required: true
 
           - label: "Secondary Button URL"
             name: "secondary_button_url"
             widget: "string"
-            required: false
+            required: true
 
       - name: "featured-release"
         label: "Featured Release"
@@ -65,22 +65,22 @@ collections:
           - label: "Artist"
             name: "artist"
             widget: "string"
-            required: false
+            required: true
 
           - label: "Description"
             name: "description"
             widget: "text"
-            required: false
+            required: true
 
           - label: "Artwork"
             name: "artwork"
             widget: "image"
-            required: false
+            required: true
 
           - label: "Listen URL"
             name: "listen_url"
             widget: "string"
-            required: false
+            required: true
 
   - name: "downloads"
     label: "Downloads"
@@ -92,14 +92,14 @@ collections:
           - label: "Title"
             name: "title"
             widget: "string"
-            required: false
+            required: true
 
           - label: "Description"
             name: "description"
             widget: "text"
-            required: false
+            required: true
 
           - label: "Press Kit File"
             name: "file"
             widget: "file"
-            required: false
+            required: true
