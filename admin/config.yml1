@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: owner-name/repo-name
   branch: main
 
 # Netlify Identity + Git Gateway handles login. Every edit made in
@@ -24,9 +25,9 @@ collections:
           - { label: "Primary Button Link", name: "primary_cta_link", widget: "string" }
           - { label: "Secondary Button Label", name: "secondary_cta", widget: "string" }
           - { label: "Secondary Button Link", name: "secondary_cta_link", widget: "string" }
-          - { label: "Hero Video (MP4, optional)", name: "video", widget: "file", required: false, hint: "Upload an MP4 to use as the animated hero background — muted, looping, autoplay. Swap it out anytime by uploading a new one here. Leave blank to show the Hero Photo instead." }
+          - { label: "Hero Video (MP4, optional)", name: "video", widget: "file", required: true, hint: "Upload an MP4 to use as the animated hero background — muted, looping, autoplay. Swap it out anytime by uploading a new one here. Leave blank to show the Hero Photo instead." }
           - { label: "Hero Photo", name: "photo", widget: "image", hint: "Used as the background when no Hero Video is set, and as the video's poster frame while it loads." }
-          - { label: "Photo Credit", name: "photo_credit", widget: "string", required: false }
+          - { label: "Photo Credit", name: "photo_credit", widget: "string", required: true }
 
       - name: "featured_release"
         label: "Featured Release"
