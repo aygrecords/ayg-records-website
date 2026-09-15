@@ -1,8 +1,8 @@
-title: "AYG RECORDS"
+title: "SWITCH IT UP"
 artist: "Lil Rashee"
-description: "A new release from AYG Records. STREAM NOW right from your phone."
+description: "HOT Release from AYG Records. STREAM NOW right from your phone."
 cover_art: ""
-listen_link: "#https://youtu.be/6h01zM8MSvM?is=GKJh1d3DOuV9EA80#"
+listen_link: "https://www.youtube.com/watch?v=nxCscum9fw4#"
 Connect the existing content/*.yml files to the existing AYG Records homepage so that content edited through /admin is reflected on the live homepage.
 
 Do not redesign anything. Do not replace the existing site. Do not create a new visual system.
@@ -28,4 +28,4 @@ After wiring it:
 
 Do not build Featured Release yet.
 
-When finished, stop and report exactly what was connected and what you tested.
+When finished, stop and report exactly what you connected and tested.
