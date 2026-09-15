@@ -1,7 +1,7 @@
 # Admin Configuration 
 backend:
   name: git-way
-  name: aygrecords/aygrecords@protonmail.com
+  name: https://aygrecords.github.io/ayg-records-website/
   branch: main
 
 media_folder: "assets/uploads"
