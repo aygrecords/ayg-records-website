@@ -1,6 +1,7 @@
 # Admin Configuration 
 backend:
-  name: git-gateway
+  name: github
+  repo: aygrecords/aygrecords@protonmail.com
   branch: main
 
 media_folder: "assets/uploads"
