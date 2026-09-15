@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYG Records — Independent Music, Built From the Ground Up</title>
+<meta name="description" content="AYG Records is an independent record label building its own creative infrastructure from the ground up — music, artists, performance, and apparel.">
+<meta property="og:title" content="AYG Records">
+<meta property="og:description" content="Independent music. Built from the ground up.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0c0c0d;
+    --charcoal:#1a1917;
+    --charcoal-2:#242220;
+    --paper:#ece7dd;
+    --smoke:#948e80;
+    --ember:#c1541c;
+    --ember-dim:#7a3712;
+    --hairline:rgba(236,231,221,0.12);
+    --display: 'Bebas Neue', sans-serif;
+    --body: 'Inter', -apple-system, sans-serif;
+    --max: 1280px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--body);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  img,video{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  :focus-visible{outline:2px solid var(--ember); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  .wrap{max-width:var(--max); margin-inline:auto; padding-inline:24px;}
+  @media (min-width:900px){ .wrap{padding-inline:56px;} }
+
+  /* ============================================================
+     NAV
+     ============================================================ */
+  .hero-top{
+    position:absolute; top:0; left:0; right:0; z-index:5;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 24px;
+  }
+  @media (min-width:900px){ .hero-top{ padding:28px 56px; } }
+
+  .logo img{ height:38px; display:block; }
+
+  nav.nav-desktop{ display:none; align-items:center; gap:2.2rem; }
+  @media (min-width:900px){ nav.nav-desktop{ display:flex; } }
+  nav.nav-desktop a{
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    font-weight:600;
+    text-transform:uppercase;
+    color:var(--paper);
+    opacity:0.82;
+    padding-bottom:6px;
+    border-bottom:2px solid transparent;
+    transition:opacity .2s ease, border-color .2s ease;
+  }
+  nav.nav-desktop a:hover{ opacity:1; }
+  nav.nav-desktop a.active{ opacity:1; border-color:var(--ember); }
+
+  .nav-social{ display:none; align-items:center; gap:1rem; margin-left:2.2rem; }
+  @media (min-width:900px){ .nav-social{ display:flex; } }
+  .nav-social a{ width:16px; height:16px; opacity:0.85; }
+  .nav-social svg{ width:100%; height:100%; fill:var(--paper); }
+
+  .nav-toggle{
+    display:flex; flex-direction:column; gap:5px;
+    background:none; border:0; cursor:pointer; padding:6px;
+  }
+  @media (min-width:900px){ .nav-toggle{ display:none; } }
+  .nav-toggle span{ width:22px; height:2px; background:var(--paper); display:block; }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    background:var(--ink);
+  }
+  .hero-photo{ position:absolute; inset:0; width:100%; height:100%; }
+  .hero-photo img, .hero-photo video{
+    width:100%; height:100%; object-fit:cover; object-position:78% 30%;
+  }
+  .hero-photo img{ animation:slow-zoom 22s ease-in-out infinite alternate; }
+  @media (prefers-reduced-motion: reduce){ .hero-photo img{ animation:none; } }
+  @keyframes slow-zoom{ from{ transform:scale(1); } to{ transform:scale(1.08); } }
+
+  .hero-vignette{
+    position:absolute; inset:0;
+    background:
+      linear-gradient(90deg, rgba(12,12,13,0.94) 0%, rgba(12,12,13,0.68) 32%, rgba(12,12,13,0.1) 58%),
+      linear-gradient(0deg, rgba(12,12,13,0.9) 0%, rgba(12,12,13,0.05) 30%, rgba(12,12,13,0) 55%);
+  }
+  .hero-grain{
+    position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .hero-photo-tag{
+    position:absolute; right:24px; bottom:24px; z-index:2;
+    font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--smoke); text-align:right; line-height:1.5;
+  }
+  @media (min-width:900px){ .hero-photo-tag{ right:56px; bottom:40px; } }
+
+  .hero-body{ position:relative; z-index:2; width:100%; padding:0 24px 64px; }
+  @media (min-width:900px){ .hero-body{ padding:0 56px 72px; } }
+  .hero-content{ max-width:640px; }
+
+  .eyebrow{
+    font-size:0.78rem; letter-spacing:0.24em; text-transform:uppercase;
+    color:var(--smoke); margin-bottom:14px; font-weight:600;
+  }
+  .eyebrow.accent{ color:var(--ember); }
+
+  h1{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(2.6rem, 7vw, 4.6rem);
+    line-height:1.02;
+    text-transform:uppercase;
+    letter-spacing:0.2px;
+    margin-bottom:20px;
+  }
+
+  .sub{
+    font-size:1rem; color:var(--paper); opacity:0.78;
+    max-width:44ch; line-height:1.65; margin-bottom:28px;
+  }
+
+  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:15px 28px;
+    font-size:0.78rem; letter-spacing:0.12em; font-weight:700; text-transform:uppercase;
+    transition:transform .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+  }
+  .btn-primary{ background:var(--ember); color:var(--paper); border:1px solid var(--ember); }
+  .btn-primary:hover{ background:var(--ember-dim); border-color:var(--ember-dim); transform:translateY(-2px); }
+  .btn-secondary{ background:transparent; color:var(--paper); border:1px solid rgba(236,231,221,0.5); }
+  .btn-secondary:hover{ border-color:var(--paper); transform:translateY(-2px); }
+
+  .scroll-cue{
+    position:absolute; left:24px; bottom:28px; z-index:2;
+    display:flex; align-items:center; gap:10px;
+    font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--smoke);
+  }
+  @media (min-width:900px){ .scroll-cue{ left:56px; } }
+  .scroll-cue .line{ width:1px; height:32px; background:var(--smoke); }
+
+  /* ============================================================
+     FEATURED RELEASE
+     ============================================================ */
+  .section{ padding:88px 0; border-top:1px solid var(--hairline); }
+  .section-grid{
+    display:grid; grid-template-columns:1fr; gap:40px; align-items:center;
+  }
+  @media (min-width:900px){
+    .section-grid{ grid-template-columns:0.85fr 1.15fr; gap:64px; }
+    .section-grid.reverse{ grid-template-columns:1.15fr 0.85fr; }
+    .section-grid.reverse .media{ order:2; }
+    .section-grid.reverse .copy{ order:1; }
+  }
+
+  .release-art{
+    position:relative;
+    aspect-ratio:1/1;
+    max-width:440px;
+    background:radial-gradient(circle at 50% 45%, var(--charcoal-2), var(--charcoal) 70%);
+    border:1px solid var(--hairline);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);
+    overflow:hidden;
+  }
+  .release-art::before{
+    content:""; position:absolute; right:-14%; top:8%; width:70%; height:84%;
+    border-radius:50%;
+    background:radial-gradient(circle, #141312 0%, #0a0a09 60%, #000 100%);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    z-index:0;
+  }
+  .release-art .cover{
+    position:relative; z-index:1; width:80%; height:80%;
+    background:linear-gradient(135deg, var(--charcoal-2), var(--ink) 60%);
+    border:1px solid var(--hairline);
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .release-art .cover img{ width:100%; height:100%; object-fit:cover; }
+  .release-art .cover img.placeholder-mark{ width:52%; height:auto; object-fit:contain; opacity:0.92; }
+
+  h2{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(2rem, 4.4vw, 3rem);
+    text-transform:uppercase;
+    line-height:1.05;
+    margin:8px 0 10px;
+  }
+  .meta-line{
+    font-size:0.85rem; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--smoke); font-weight:600; margin-bottom:20px;
+  }
+  .copy p{ color:var(--paper); opacity:0.78; max-width:46ch; line-height:1.65; margin-bottom:28px; }
+
+  /* ============================================================
+     STORY
+     ============================================================ */
+  .story-photo{
+    aspect-ratio:4/5;
+    background:linear-gradient(200deg, #2a1c10 0%, #120d0a 55%, #060504 100%);
+    border:1px solid var(--hairline);
+    position:relative; overflow:hidden;
+  }
+  .story-photo img{ width:100%; height:100%; object-fit:cover; }
+  .story-copy-solo{ max-width:640px; margin-inline:auto; text-align:center; }
+  .story-copy-solo p{ margin-inline:auto; }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  footer{
+    padding:40px 0 56px;
+    border-top:1px solid var(--hairline);
+    text-align:center;
+  }
+  footer .foot-social{ display:flex; justify-content:center; gap:1.2rem; margin-bottom:18px; }
+  footer .foot-social a{ width:18px; height:18px; opacity:0.8; }
+  footer .foot-social svg{ width:100%; height:100%; fill:var(--paper); }
+  footer p{ color:var(--smoke); font-size:0.78rem; letter-spacing:0.04em; }
+
+  /* ============================================================
+     MOBILE NAV OVERLAY
+     ============================================================ */
+  .mobile-menu{
+    position:fixed; inset:0; z-index:50;
+    background:var(--ink);
+    display:none;
+    flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:2rem;
+  }
+  .mobile-menu.open{ display:flex; }
+  .mobile-menu a{
+    font-family:var(--display);
+    font-size:2rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--paper);
+  }
+  .mobile-menu-close{
+    position:absolute; top:22px; right:22px;
+    background:none; border:0; color:var(--paper); font-size:1.8rem; cursor:pointer;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<header class="hero">
+  <div class="hero-photo" id="hero-media">
+    <img id="hero-media-img" src="assets/images/hero-lil-rashee.png" alt="">
+  </div>
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <span class="hero-photo-tag" id="hero-photo-credit">Lil Rashee — @lilrashee</span>
+
+  <div class="hero-top">
+    <a href="#top" class="logo" aria-label="AYG Records, home">
+      <img src="assets/images/ayg-logo.png" alt="AYG Records">
+    </a>
+
+    <nav class="nav-desktop" aria-label="primary">
+      <a href="#top" class="active">Home</a>
+      <a href="#music">Music</a>
+      <a href="#studio">Studio</a>
+      <a href="#about">About</a>
+      <a href="/admin">Admin</a>
+    </nav>
+
+    <div class="nav-social">
+      <a href="https://www.instagram.com/aygrecordsllc" aria-label="AYG Records on Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.06 1.1.05 1.8.22 2.4.46.65.25 1.2.6 1.75 1.14.5.5.85 1.1 1.1 1.75.25.6.4 1.3.46 2.4.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.22 1.8-.46 2.4a4.9 4.9 0 0 1-1.14 1.75 4.9 4.9 0 0 1-1.75 1.1c-.6.25-1.3.4-2.4.46-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.22-2.4-.46a4.9 4.9 0 0 1-1.75-1.14 4.9 4.9 0 0 1-1.1-1.75c-.25-.6-.4-1.3-.46-2.4C2 15 2 14.7 2 12s0-3 .06-4.1c.05-1.1.22-1.8.46-2.4.25-.65.6-1.2 1.14-1.75A4.9 4.9 0 0 1 5.4 2.6c.6-.25 1.3-.4 2.4-.46C8.9 2.06 9.2 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-content">
+      <p class="eyebrow" id="hero-eyebrow">AYG RECORDS</p>
+      <h1 id="hero-headline">Independent music.<br>Built from the ground up.</h1>
+      <p class="sub" id="hero-subcopy">AYG Records is an independent label built by artists, for artists — starting with a closet turned into a stage.</p>
+      <div class="btn-row">
+        <a href="#music" class="btn btn-primary" id="hero-primary-cta">Listen Now</a>
+        <a href="#studio" class="btn btn-secondary" id="hero-secondary-cta">Explore AYG</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span class="line"></span> Scroll</div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">&times;</button>
+  <a href="#top">Home</a>
+  <a href="#music">Music</a>
+  <a href="#studio">Studio</a>
+  <a href="#about">About</a>
+  <a href="/admin">Admin</a>
+</div>
+
+<main id="top">
+
+  <!-- ============================================================
+       FEATURED RELEASE
+       ============================================================ -->
+  <section class="section" id="music">
+    <div class="wrap section-grid">
+      <div class="media">
+        <div class="release-art">
+          <div class="cover" id="release-cover">
+            <img class="placeholder-mark" src="assets/images/ayg-logo.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="copy">
+        <p class="eyebrow accent">Featured Release</p>
+        <h2 id="release-title">Title coming soon</h2>
+        <p class="meta-line" id="release-artist">Lil Rashee</p>
+        <p id="release-description">A new release from AYG Records. Stream now on your preferred platform.</p>
+        <a href="#" class="btn btn-primary" id="release-listen">Listen Now &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AYG STORY
+       ============================================================ -->
+  <section class="section" id="studio">
+    <div class="wrap">
+      <div class="section-grid reverse" id="story-grid" style="display:none;">
+        <div class="media">
+          <div class="story-photo" id="story-photo-host"></div>
+        </div>
+        <div class="copy">
+          <p class="eyebrow accent" id="story-eyebrow-split">THE AYG STORY</p>
+          <h2 id="story-headline-split">Two days ago,<br>this was just a closet.</h2>
+          <p id="story-body-split">AYG is an independent label building its own creative infrastructure — music, artists, performance, apparel — one piece at a time.</p>
+          <a href="#" class="btn btn-secondary" id="story-cta-split">See the Story &rarr;</a>
+        </div>
+      </div>
+
+      <div class="story-copy-solo" id="story-solo">
+        <p class="eyebrow accent" id="story-eyebrow-solo">THE AYG STORY</p>
+        <h2 id="story-headline-solo">Two days ago,<br>this was just a closet.</h2>
+        <p id="story-body-solo">AYG is an independent label building its own creative infrastructure — music, artists, performance, apparel — one piece at a time.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="about">
+  <div class="foot-social">
+    <a href="https://www.instagram.com/aygrecordsllc" aria-label="AYG Records on Instagram" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.06 1.1.05 1.8.22 2.4.46.65.25 1.2.6 1.75 1.14.5.5.85 1.1 1.1 1.75.25.6.4 1.3.46 2.4.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.22 1.8-.46 2.4a4.9 4.9 0 0 1-1.14 1.75 4.9 4.9 0 0 1-1.75 1.1c-.6.25-1.3.4-2.4.46-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.22-2.4-.46a4.9 4.9 0 0 1-1.75-1.14 4.9 4.9 0 0 1-1.1-1.75c-.25-.6-.4-1.3-.46-2.4C2 15 2 14.7 2 12s0-3 .06-4.1c.05-1.1.22-1.8.46-2.4.25-.65.6-1.2 1.14-1.75A4.9 4.9 0 0 1 5.4 2.6c.6-.25 1.3-.4 2.4-.46C8.9 2.06 9.2 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+    </a>
+  </div>
+  <p>&copy; 2026 AYG Records LLC. All rights reserved.</p>
+</footer>
+
+<!-- ============================================================
+     Content loader — reads content/homepage/*.yml at runtime so
+     edits saved in /admin (which commit straight to those files)
+     show up on the live site with no rebuild/build step. Falls
+     back silently to the markup already in the page if a fetch
+     fails, so nothing ever renders empty.
+     ============================================================ -->
+<script>
+(function(){
+  // These YAML files are flat lists of quoted scalar fields (Decap
+  // always writes them that way for these widget types), so a small
+  // parser covers them without pulling a full YAML library over
+  // the network — no external dependency, no CDN to go down.
+  function parseFlatYaml(text){
+    var out = {};
+    text.split('\n').forEach(function(line){
+      var m = line.match(/^([A-Za-z0-9_]+):\s*(.*)$/);
+      if (!m) return;
+      var key = m[1], val = m[2].trim();
+      if ((val[0] === '"' && val[val.length-1] === '"') || (val[0] === "'" && val[val.length-1] === "'")) {
+        val = val.slice(1, -1).replace(/\\n/g, '\n').replace(/\\"/g, '"');
+      }
+      out[key] = val;
+    });
+    return out;
+  }
+
+  function fetchYaml(path){
+    return fetch(path, { cache: 'no-store' })
+      .then(function(res){ return res.ok ? res.text() : Promise.reject(res.status); })
+      .then(parseFlatYaml)
+      .catch(function(){ return null; });
+  }
+
+  var $ = function(id){ return document.getElementById(id); };
+  function setHTML(id, text){
+    if (!text) return;
+    $(id).innerHTML = String(text).split('\n').map(function(l){
+      return l.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    }).join('<br>');
+  }
+
+  // ---------- HERO ----------
+  fetchYaml('content/homepage/hero.yml').then(function(data){
+    if (!data) return;
+    if (data.eyebrow) $('hero-eyebrow').textContent = data.eyebrow;
+    setHTML('hero-headline', data.headline);
+    if (data.subcopy) $('hero-subcopy').textContent = data.subcopy;
+    if (data.primary_cta) $('hero-primary-cta').textContent = data.primary_cta;
+    if (data.primary_cta_link) $('hero-primary-cta').setAttribute('href', data.primary_cta_link);
+    if (data.secondary_cta) $('hero-secondary-cta').textContent = data.secondary_cta;
+    if (data.secondary_cta_link) $('hero-secondary-cta').setAttribute('href', data.secondary_cta_link);
+    if (data.photo_credit) { $('hero-photo-credit').textContent = data.photo_credit; $('hero-photo-credit').style.display=''; }
+    else { $('hero-photo-credit').style.display = 'none'; }
+
+    var mediaHost = $('hero-media');
+    if (data.video) {
+      mediaHost.innerHTML = '';
+      var video = document.createElement('video');
+      video.autoplay = true; video.muted = true; video.loop = true; video.playsInline = true;
+      if (data.photo) video.poster = data.photo;
+      var source = document.createElement('source');
+      source.src = data.video; source.type = 'video/mp4';
+      video.appendChild(source);
+      mediaHost.appendChild(video);
+      video.load();
+      video.play().catch(function(){});
+    } else if (data.photo) {
+      $('hero-media-img').src = data.photo;
+    }
+  });
+
+  // ---------- FEATURED RELEASE ----------
+  fetchYaml('content/homepage/featured-release.yml').then(function(data){
+    if (!data) return;
+    if (data.title) $('release-title').textContent = data.title;
+    if (data.artist) $('release-artist').textContent = data.artist;
+    if (data.description) $('release-description').textContent = data.description;
+    if (data.listen_link) $('release-listen').setAttribute('href', data.listen_link);
+    if (data.cover_art) {
+      $('release-cover').innerHTML = '<img src="' + data.cover_art.replace(/"/g,'&quot;') + '" alt="' + (data.title||'Cover art').replace(/"/g,'&quot;') + '">';
+    }
+  });
+
+  // ---------- AYG STORY ----------
+  fetchYaml('content/homepage/story.yml').then(function(data){
+    if (!data) return;
+    var hasPhoto = !!data.photo;
+
+    if (hasPhoto) {
+      $('story-grid').style.display = 'grid';
+      $('story-solo').style.display = 'none';
+      if (data.eyebrow) $('story-eyebrow-split').textContent = data.eyebrow;
+      setHTML('story-headline-split', data.headline);
+      if (data.body) $('story-body-split').textContent = data.body;
+      if (data.cta_label) $('story-cta-split').textContent = data.cta_label + ' \u2192';
+      if (data.cta_link) $('story-cta-split').setAttribute('href', data.cta_link);
+      $('story-photo-host').innerHTML = '<img src="' + data.photo.replace(/"/g,'&quot;') + '" alt="">';
+    } else {
+      if (data.eyebrow) $('story-eyebrow-solo').textContent = data.eyebrow;
+      setHTML('story-headline-solo', data.headline);
+      if (data.body) $('story-body-solo').textContent = data.body;
+    }
+  });
+
+  // ---------- MOBILE MENU ----------
+  var toggle = $('nav-toggle'), menu = $('mobile-menu'), close = $('mobile-menu-close');
+  function openMenu(){ menu.classList.add('open'); toggle.setAttribute('aria-expanded','true'); }
+  function closeMenu(){ menu.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+  toggle.addEventListener('click', openMenu);
+  close.addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+})();
+</script>
+
+</body>
+</html>
