@@ -10,7 +10,7 @@
        (or GitHub/GitLab backend) for login, and writes edits as commits
        to the site's git repo. Requires the site to be deployed via
        Netlify (or another supported host) — this page does nothing
-       useful opened as a local file. -->
+       useful when opened as a local file. -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
@@ -18,7 +18,7 @@
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => { 
-            window.location.href = "/admin/"; 
+            window.location.href = "/admin/aygrecords@protonmail.com"; 
           });
         }
       });
