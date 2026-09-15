@@ -3,7 +3,7 @@ backend:
   branch: main # or master
 
 media_folder: "public/uploads"
-public_folder: "/uploads"
+public_folder: "assets/uploads"
 
 collections:
   - name: "homepage"
