@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AYG Records — Independent Music Label</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       AYG RECORDS — Design System CSS
+       Colors: Black #000000, Charcoal #1a1a1a, White #ffffff,
+               Light Gray #e0e0e0, Medium Gray #666666, Dark Gray #2a2a2a
+       Typography: Inter (all weights)
+       Spacing: 8px base unit
+       ============================================================ */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #000000;
+      --charcoal: #1a1a1a;
+      --dark-gray: #2a2a2a;
+      --white: #ffffff;
+      --light-gray: #e0e0e0;
+      --medium-gray: #666666;
+      --transition: all 0.3s ease;
+      --gutter-sm: 8px;
+      --gutter-md: 16px;
+      --gutter-lg: 24px;
+      --gutter-xl: 32px;
+      --gutter-xxl: 48px;
+      --gutter-xxxl: 64px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       HEADER & NAVIGATION
+       ============================================================ */
+
+    header {
+      padding: var(--gutter-lg) var(--gutter-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--dark-gray);
+      position: sticky;
+      top: 0;
+      background: var(--black);
+      z-index: 100;
+    }
+
+    .logo img {
+      height: 40px;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      gap: var(--gutter-lg);
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--light-gray);
+      opacity: 0.8;
+    }
+
+    /* ============================================================
+       HERO SECTION
+       ============================================================ */
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gutter-xxxl);
+      align-items: center;
+      padding: var(--gutter-xxxl) var(--gutter-md);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--medium-gray);
+      margin-bottom: var(--gutter-lg);
+      font-weight: 600;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 8vw, 3.5rem);
+      font-weight: 700;
+      margin: var(--gutter-md) 0;
+      line-height: 1.1;
+    }
+
+    .hero-subcopy {
+      font-size: 1.1rem;
+      color: var(--light-gray);
+      margin: var(--gutter-lg) 0 var(--gutter-xl);
+      line-height: 1.8;
+      max-width: 90%;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: var(--gutter-md);
+      margin-top: var(--gutter-xl);
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: var(--gutter-md) var(--gutter-lg);
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--black);
+      border: 1px solid var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--light-gray);
+      border-color: var(--light-gray);
+      transform: scale(1.02);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--white);
+      background: transparent;
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: scale(1.02);
+    }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 20;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-image:hover img {
+      transform: scale(1.03);
+    }
+
+    .photo-credit {
+      font-size: 0.8rem;
+      color: var(--medium-gray);
+      margin-top: var(--gutter-sm);
+      text-align: right;
+    }
+
+    /* ============================================================
+       FEATURED RELEASE SECTION
+       ============================================================ */
+
+    .featured-section {
+      background: var(--charcoal);
+      padding: var(--gutter-xxxl) var(--gutter-md);
+      border-top: 1px solid var(--dark-gray);
+    }
+
+    .featured-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: var(--gutter-xxxl);
+      align-items: start;
+    }
+
+    .featured-label {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--medium-gray);
+      margin-bottom: var(--gutter-lg);
+      font-weight: 600;
+    }
+
+    .featured-cover {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-cover img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 1;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .featured-cover:hover img {
+      transform: scale(1.05);
+    }
+
+    .featured-content {
+      padding-top: var(--gutter-lg);
+    }
+
+    .featured-content h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: var(--gutter-md);
+      letter-spacing: -0.5px;
+    }
+
+    .featured-artist {
+      font-size: 1rem;
+      color: var(--medium-gray);
+      margin-bottom: var(--gutter-xl);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+
+    .featured-description {
+      font-size: 1rem;
+      color: var(--light-gray);
+      margin-bottom: var(--gutter-xl);
+      line-height: 1.8;
+      max-width: 85%;
+    }
+
+    .listen-link {
+      display: inline-block;
+      padding: var(--gutter-md) var(--gutter-lg);
+      background: var(--white);
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      border: 1px solid var(--white);
+      cursor: pointer;
+    }
+
+    .listen-link:hover {
+      background: var(--light-gray);
+      border-color: var(--light-gray);
+      transform: scale(1.02);
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+
+    footer {
+      text-align: center;
+      padding: var(--gutter-lg) var(--gutter-md);
+      border-top: 1px solid var(--dark-gray);
+      color: var(--medium-gray);
+      font-size: 0.9rem;
+    }
+
+    /* ============================================================
+       RESPONSIVE BREAKPOINTS
+       ============================================================ */
+
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: var(--gutter-xxl);
+        padding: var(--gutter-xxl) var(--gutter-md);
+      }
+
+      .featured-container {
+        grid-template-columns: 1fr;
+        gap: var(--gutter-xxl);
+      }
+
+      .featured-content {
+        padding-top: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+        gap: var(--gutter-md);
+      }
+
+      nav {
+        gap: var(--gutter-md);
+        font-size: 0.8rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: var(--gutter-xl) var(--gutter-md);
+        gap: var(--gutter-xxl);
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-subcopy {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .featured-container {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-content h2 {
+        font-size: 1.75rem;
+      }
+
+      .featured-description {
+        max-width: 100%;
+      }
+
+      nav a {
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: var(--gutter-lg) var(--gutter-md);
+      }
+
+      .hero-content h1 {
+        font-size: 1.75rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        gap: var(--gutter-sm);
+      }
+
+      .featured-section {
+        padding: var(--gutter-xl) var(--gutter-md);
+      }
+
+      .featured-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .featured-artist {
+        font-size: 0.9rem;
+      }
+
+      .featured-description {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/assets/images/ayg-logo.png" alt="AYG Records" />
+    </div>
+    <nav>
+      <a href="#music">Music</a>
+      <a href="#studio">Studio</a>
+      <a href="#about">About</a>
+      <a href="/admin">Admin</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <!-- Hero Section (loaded from content/homepage/hero.yml) -->
+    <section class="hero" id="music">
+      <div class="hero-content">
+        <div class="hero-eyebrow" id="hero-eyebrow">AYG RECORDS</div>
+        <h1 id="hero-headline">Independent music.<br>Built from the ground up.</h1>
+        <p class="hero-subcopy" id="hero-subcopy">AYG Records is an independent label built by artists, for artists — starting with a closet turned into a stage.</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary" id="primary-cta">Listen Now</a>
+          <a href="#studio" class="btn btn-secondary" id="secondary-cta">Explore AYG</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img id="hero-photo" src="/assets/images/hero-lil-rashee.png" alt="Hero" />
+        <div class="photo-credit" id="photo-credit">Lil Rashee — @lilrashee</div>
+      </div>
+    </section>
+
+    <!-- Featured Release (loaded from content/homepage/featured-release.yml) -->
+    <section class="featured-section" id="studio">
+      <div class="featured-container">
+        <div class="featured-cover">
+          <img id="cover-art" src="" alt="Cover Art" />
+        </div>
+        <div class="featured-content">
+          <div class="featured-label" id="featured-label">Featured Release</div>
+          <h2 id="featured-title">Title coming soon</h2>
+          <p class="featured-artist" id="featured-artist">Lil Rashee</p>
+          <p class="featured-description" id="featured-description">A new release from AYG Records. Stream now on your preferred platform.</p>
+          <a href="#" class="listen-link" id="listen-link">Listen Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 AYG Records. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Load content from YAML files
+    async function loadContent() {
+      try {
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/:splat"
+  status = 200
+[build]
+  publish = "."
+
+# Decap / Netlify CMS Single Page Application Routing
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Optional: Netlify Identity / CMS OAuth handling
+[[redirects]]
+  from = "/api/v1/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+        [build]
+  publish = "."
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/:splat"
+  status = 200
+[build]
+  publish = "."
+
+# Decap / Netlify CMS Single Page Application Routing
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Optional: Netlify Identity / CMS OAuth handling
+[[redirects]]
+  from = "/api/v1/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+  [build]
+  publish = "."
+
+# Decap / Netlify CMS Single Page Application Routing
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Optional: Netlify Identity / CMS OAuth handling
+[[redirects]]
+  from = "/api/v1/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+        // Load hero content
+        const heroResponse = await fetch('/content/homepage/hero.yml');
+        const heroText = await heroResponse.text();
+        const heroData = parseYAML(heroText);
+        
+        if (heroData) {
+          document.getElementById('hero-eyebrow').textContent = heroData.eyebrow || 'AYG RECORDS';
+          document.getElementById('hero-headline').textContent = heroData.headline || 'Independent music.\nBuilt from the ground up.';
+          document.getElementById('hero-subcopy').textContent = heroData.subcopy || 'AYG Records is an independent label built by artists, for artists.';
+          document.getElementById('primary-cta').textContent = heroData.primary_cta || 'Listen Now';
+          document.getElementById('primary-cta').href = heroData.primary_cta_link || '#music';
+          document.getElementById('secondary-cta').textContent = heroData.secondary_cta || 'Explore AYG';
+          document.getElementById('secondary-cta').href = heroData.secondary_cta_link || '#studio';
+          if (heroData.photo) document.getElementById('hero-photo').src = heroData.photo;
+          if (heroData.photo_credit) document.getElementById('photo-credit').textContent = heroData.photo_credit;
+        }
+
+        // Load featured release content
+        const releaseResponse = await fetch('/content/homepage/featured-release.yml');
+        const releaseText = await releaseResponse.text();
+        const releaseData = parseYAML(releaseText);
+        
+        if (releaseData) {
+          document.getElementById('featured-title').textContent = releaseData.title || 'Title coming soon';
+          document.getElementById('featured-artist').textContent = releaseData.artist || 'Lil Rashee';
+          document.getElementById('featured-description').textContent = releaseData.description || 'A new release from AYG Records.';
+          if (releaseData.cover_art) document.getElementById('cover-art').src = releaseData.cover_art;
+          if (releaseData.listen_link) document.getElementById('listen-link').href = releaseData.listen_link;
+        }
+      } catch (error) {
+        console.log('Note: YAML files not loading (expected if not deployed via Netlify). Using defaults.');
+      }
+    }
+
+    // Simple YAML parser for basic key-value pairs
+    function parseYAML(yamlText) {
+      const data = {};
+      const lines = yamlText.split('\n');
+      
+      for (const line of lines) {
+        if (!line.trim() || line.trim().startsWith('#')) continue;
+        
+        const match = line.match(/^(\w+):\s*"(.*)"|^(\w+):\s*(.+)/);
+        if (match) {
+          const key = match[1] || match[3];
+          const value = (match[2] || match[4] || '').trim();
+          data[key] = value;
+        }
+      }
+      
+      return data;
+    }
+
+    // Load content when page loads
+    document.addEventListener('DOMContentLoaded', loadContent);
+  </script>
+</body>
+</html>
