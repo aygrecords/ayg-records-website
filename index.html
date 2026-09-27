@@ -11,262 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#0c0c0d;
-    --charcoal:#1a1917;
-    --charcoal-2:#242220;
-    --paper:#ece7dd;
-    --smoke:#948e80;
-    --ember:#c1541c;
-    --ember-dim:#7a3712;
-    --hairline:rgba(236,231,221,0.12);
-    --display: 'Bebas Neue', sans-serif;
-    --body: 'Inter', -apple-system, sans-serif;
-    --max: 1280px;
-  }
-
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--ink);
-    color:var(--paper);
-    font-family:var(--body);
-    -webkit-font-smoothing:antialiased;
-    line-height:1.5;
-  }
-  img,video{max-width:100%;display:block;}
-  a{color:inherit;text-decoration:none;}
-  :focus-visible{outline:2px solid var(--ember); outline-offset:3px;}
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
-  }
-  .wrap{max-width:var(--max); margin-inline:auto; padding-inline:24px;}
-  @media (min-width:900px){ .wrap{padding-inline:56px;} }
-
-  /* ============================================================
-     NAV
-     ============================================================ */
-  .hero-top{
-    position:absolute; top:0; left:0; right:0; z-index:5;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:20px 24px;
-  }
-  @media (min-width:900px){ .hero-top{ padding:28px 56px; } }
-
-  .logo img{ height:38px; display:block; }
-
-  nav.nav-desktop{ display:none; align-items:center; gap:2.2rem; }
-  @media (min-width:900px){ nav.nav-desktop{ display:flex; } }
-  nav.nav-desktop a{
-    font-size:0.78rem;
-    letter-spacing:0.14em;
-    font-weight:600;
-    text-transform:uppercase;
-    color:var(--paper);
-    opacity:0.82;
-    padding-bottom:6px;
-    border-bottom:2px solid transparent;
-    transition:opacity .2s ease, border-color .2s ease;
-  }
-  nav.nav-desktop a:hover{ opacity:1; }
-  nav.nav-desktop a.active{ opacity:1; border-color:var(--ember); }
-
-  .nav-social{ display:none; align-items:center; gap:1rem; margin-left:2.2rem; }
-  @media (min-width:900px){ .nav-social{ display:flex; } }
-  .nav-social a{ width:16px; height:16px; opacity:0.85; }
-  .nav-social svg{ width:100%; height:100%; fill:var(--paper); }
-
-  .nav-toggle{
-    display:flex; flex-direction:column; gap:5px;
-    background:none; border:0; cursor:pointer; padding:6px;
-  }
-  @media (min-width:900px){ .nav-toggle{ display:none; } }
-  .nav-toggle span{ width:22px; height:2px; background:var(--paper); display:block; }
-
-  /* ============================================================
-     HERO
-     ============================================================ */
-  .hero{
-    position:relative;
-    min-height:92vh;
-    display:flex;
-    align-items:flex-end;
-    overflow:hidden;
-    background:var(--ink);
-  }
-  .hero-photo{ position:absolute; inset:0; width:100%; height:100%; }
-  .hero-photo img, .hero-photo video{
-    width:100%; height:100%; object-fit:cover; object-position:78% 30%;
-  }
-  .hero-photo img{ animation:slow-zoom 22s ease-in-out infinite alternate; }
-  @media (prefers-reduced-motion: reduce){ .hero-photo img{ animation:none; } }
-  @keyframes slow-zoom{ from{ transform:scale(1); } to{ transform:scale(1.08); } }
-
-  .hero-vignette{
-    position:absolute; inset:0;
-    background:
-      linear-gradient(90deg, rgba(12,12,13,0.94) 0%, rgba(12,12,13,0.68) 32%, rgba(12,12,13,0.1) 58%),
-      linear-gradient(0deg, rgba(12,12,13,0.9) 0%, rgba(12,12,13,0.05) 30%, rgba(12,12,13,0) 55%);
-  }
-  .hero-grain{
-    position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  .hero-photo-tag{
-    position:absolute; right:24px; bottom:24px; z-index:2;
-    font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--smoke); text-align:right; line-height:1.5;
-  }
-  @media (min-width:900px){ .hero-photo-tag{ right:56px; bottom:40px; } }
-
-  .hero-body{ position:relative; z-index:2; width:100%; padding:0 24px 64px; }
-  @media (min-width:900px){ .hero-body{ padding:0 56px 72px; } }
-  .hero-content{ max-width:640px; }
-
-  .eyebrow{
-    font-size:0.78rem; letter-spacing:0.24em; text-transform:uppercase;
-    color:var(--smoke); margin-bottom:14px; font-weight:600;
-  }
-  .eyebrow.accent{ color:var(--ember); }
-
-  h1{
-    font-family:var(--display);
-    font-weight:400;
-    font-size:clamp(2.6rem, 7vw, 4.6rem);
-    line-height:1.02;
-    text-transform:uppercase;
-    letter-spacing:0.2px;
-    margin-bottom:20px;
-  }
-
-  .sub{
-    font-size:1rem; color:var(--paper); opacity:0.78;
-    max-width:44ch; line-height:1.65; margin-bottom:28px;
-  }
-
-  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:15px 28px;
-    font-size:0.78rem; letter-spacing:0.12em; font-weight:700; text-transform:uppercase;
-    transition:transform .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
-  }
-  .btn-primary{ background:var(--ember); color:var(--paper); border:1px solid var(--ember); }
-  .btn-primary:hover{ background:var(--ember-dim); border-color:var(--ember-dim); transform:translateY(-2px); }
-  .btn-secondary{ background:transparent; color:var(--paper); border:1px solid rgba(236,231,221,0.5); }
-  .btn-secondary:hover{ border-color:var(--paper); transform:translateY(-2px); }
-
-  .scroll-cue{
-    position:absolute; left:24px; bottom:28px; z-index:2;
-    display:flex; align-items:center; gap:10px;
-    font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--smoke);
-  }
-  @media (min-width:900px){ .scroll-cue{ left:56px; } }
-  .scroll-cue .line{ width:1px; height:32px; background:var(--smoke); }
-
-  /* ============================================================
-     FEATURED RELEASE
-     ============================================================ */
-  .section{ padding:88px 0; border-top:1px solid var(--hairline); }
-  .section-grid{
-    display:grid; grid-template-columns:1fr; gap:40px; align-items:center;
-  }
-  @media (min-width:900px){
-    .section-grid{ grid-template-columns:0.85fr 1.15fr; gap:64px; }
-    .section-grid.reverse{ grid-template-columns:1.15fr 0.85fr; }
-    .section-grid.reverse .media{ order:2; }
-    .section-grid.reverse .copy{ order:1; }
-  }
-
-  .release-art{
-    position:relative;
-    aspect-ratio:1/1;
-    max-width:440px;
-    background:radial-gradient(circle at 50% 45%, var(--charcoal-2), var(--charcoal) 70%);
-    border:1px solid var(--hairline);
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);
-    overflow:hidden;
-  }
-  .release-art::before{
-    content:""; position:absolute; right:-14%; top:8%; width:70%; height:84%;
-    border-radius:50%;
-    background:radial-gradient(circle, #141312 0%, #0a0a09 60%, #000 100%);
-    box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
-    z-index:0;
-  }
-  .release-art .cover{
-    position:relative; z-index:1; width:80%; height:80%;
-    background:linear-gradient(135deg, var(--charcoal-2), var(--ink) 60%);
-    border:1px solid var(--hairline);
-    display:flex; align-items:center; justify-content:center;
-    overflow:hidden;
-  }
-  .release-art .cover img{ width:100%; height:100%; object-fit:cover; }
-  .release-art .cover img.placeholder-mark{ width:52%; height:auto; object-fit:contain; opacity:0.92; }
-
-  h2{
-    font-family:var(--display);
-    font-weight:400;
-    font-size:clamp(2rem, 4.4vw, 3rem);
-    text-transform:uppercase;
-    line-height:1.05;
-    margin:8px 0 10px;
-  }
-  .meta-line{
-    font-size:0.85rem; letter-spacing:0.12em; text-transform:uppercase;
-    color:var(--smoke); font-weight:600; margin-bottom:20px;
-  }
-  .copy p{ color:var(--paper); opacity:0.78; max-width:46ch; line-height:1.65; margin-bottom:28px; }
-
-  /* ============================================================
-     STORY
-     ============================================================ */
-  .story-photo{
-    aspect-ratio:4/5;
-    background:linear-gradient(200deg, #2a1c10 0%, #120d0a 55%, #060504 100%);
-    border:1px solid var(--hairline);
-    position:relative; overflow:hidden;
-  }
-  .story-photo img{ width:100%; height:100%; object-fit:cover; }
-  .story-copy-solo{ max-width:640px; margin-inline:auto; text-align:center; }
-  .story-copy-solo p{ margin-inline:auto; }
-
-  /* ============================================================
-     FOOTER
-     ============================================================ */
-  footer{
-    padding:40px 0 56px;
-    border-top:1px solid var(--hairline);
-    text-align:center;
-  }
-  footer .foot-social{ display:flex; justify-content:center; gap:1.2rem; margin-bottom:18px; }
-  footer .foot-social a{ width:18px; height:18px; opacity:0.8; }
-  footer .foot-social svg{ width:100%; height:100%; fill:var(--paper); }
-  footer p{ color:var(--smoke); font-size:0.78rem; letter-spacing:0.04em; }
-
-  /* ============================================================
-     MOBILE NAV OVERLAY
-     ============================================================ */
-  .mobile-menu{
-    position:fixed; inset:0; z-index:50;
-    background:var(--ink);
-    display:none;
-    flex-direction:column;
-    align-items:center; justify-content:center;
-    gap:2rem;
-  }
-  .mobile-menu.open{ display:flex; }
-  .mobile-menu a{
-    font-family:var(--display);
-    font-size:2rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--paper);
-  }
-  .mobile-menu-close{
-    position:absolute; top:22px; right:22px;
-    background:none; border:0; color:var(--paper); font-size:1.8rem; cursor:pointer;
-  }
-</style>
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 
@@ -287,10 +32,16 @@
     </a>
 
     <nav class="nav-desktop" aria-label="primary">
-      <a href="#top" class="active">Home</a>
-      <a href="#music">Music</a>
-      <a href="#studio">Studio</a>
-      <a href="#about">About</a>
+      <a href="/" class="active">Home</a>
+      <a href="https://aygrecords.bandcamp.com/" target="_blank" rel="noopener">Music</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Artists <span class="caret" aria-hidden="true"></span></button>
+        <div class="nav-dropdown-menu">
+          <a href="/lil-rashee.html">Lil Rashee</a>
+        </div>
+      </div>
+      <a href="/studio.html">Studio</a>
+      <a href="#story">About</a>
       <a href="/admin">Admin</a>
     </nav>
 
@@ -311,8 +62,8 @@
       <h1 id="hero-headline">Independent music.<br>Built from the ground up.</h1>
       <p class="sub" id="hero-subcopy">AYG Records is an independent label built by artists, for artists — starting with a closet turned into a stage.</p>
       <div class="btn-row">
-        <a href="#music" class="btn btn-primary" id="hero-primary-cta">Listen Now</a>
-        <a href="#studio" class="btn btn-secondary" id="hero-secondary-cta">Explore AYG</a>
+        <a href="/assets/uploads/ayg-records-catalog.pdf" download class="btn btn-primary" id="hero-primary-cta">Listen Now</a>
+        <a href="#story" class="btn btn-secondary" id="hero-secondary-cta">Explore AYG</a>
       </div>
     </div>
   </div>
@@ -322,10 +73,12 @@
 
 <div class="mobile-menu" id="mobile-menu">
   <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">&times;</button>
-  <a href="#top">Home</a>
-  <a href="#music">Music</a>
-  <a href="#studio">Studio</a>
-  <a href="#about">About</a>
+  <a href="/">Home</a>
+  <a href="https://aygrecords.bandcamp.com/" target="_blank" rel="noopener">Music</a>
+  <span class="submenu-label">Artists</span>
+  <a href="/lil-rashee.html">Lil Rashee</a>
+  <a href="/studio.html">Studio</a>
+  <a href="#story">About</a>
   <a href="/admin">Admin</a>
 </div>
 
@@ -356,7 +109,7 @@
   <!-- ============================================================
        AYG STORY
        ============================================================ -->
-  <section class="section" id="studio">
+  <section class="section" id="story">
     <div class="wrap">
       <div class="section-grid reverse" id="story-grid" style="display:none;">
         <div class="media">
@@ -366,7 +119,7 @@
           <p class="eyebrow accent" id="story-eyebrow-split">THE AYG STORY</p>
           <h2 id="story-headline-split">Two days ago,<br>this was just a closet.</h2>
           <p id="story-body-split">AYG is an independent label building its own creative infrastructure — music, artists, performance, apparel — one piece at a time.</p>
-          <a href="#" class="btn btn-secondary" id="story-cta-split">See the Story &rarr;</a>
+          <a href="/studio.html" class="btn btn-secondary" id="story-cta-split">See the Story &rarr;</a>
         </div>
       </div>
 
@@ -374,6 +127,7 @@
         <p class="eyebrow accent" id="story-eyebrow-solo">THE AYG STORY</p>
         <h2 id="story-headline-solo">Two days ago,<br>this was just a closet.</h2>
         <p id="story-body-solo">AYG is an independent label building its own creative infrastructure — music, artists, performance, apparel — one piece at a time.</p>
+        <a href="/studio.html" class="btn btn-secondary" id="story-cta-solo" style="margin-top:8px;">See the Story &rarr;</a>
       </div>
     </div>
   </section>
@@ -438,7 +192,15 @@
     setHTML('hero-headline', data.headline);
     if (data.subcopy) $('hero-subcopy').textContent = data.subcopy;
     if (data.primary_cta) $('hero-primary-cta').textContent = data.primary_cta;
-    if (data.primary_cta_link) $('hero-primary-cta').setAttribute('href', data.primary_cta_link);
+    if (data.primary_cta_link) {
+      $('hero-primary-cta').setAttribute('href', data.primary_cta_link);
+      // Downloadable files (PDF, etc.) should actually download, not navigate away
+      if (/\.(pdf|zip|mp3|wav)$/i.test(data.primary_cta_link)) {
+        $('hero-primary-cta').setAttribute('download', '');
+      } else {
+        $('hero-primary-cta').removeAttribute('download');
+      }
+    }
     if (data.secondary_cta) $('hero-secondary-cta').textContent = data.secondary_cta;
     if (data.secondary_cta_link) $('hero-secondary-cta').setAttribute('href', data.secondary_cta_link);
     if (data.photo_credit) { $('hero-photo-credit').textContent = data.photo_credit; $('hero-photo-credit').style.display=''; }
@@ -491,6 +253,8 @@
       if (data.eyebrow) $('story-eyebrow-solo').textContent = data.eyebrow;
       setHTML('story-headline-solo', data.headline);
       if (data.body) $('story-body-solo').textContent = data.body;
+      if (data.cta_label) $('story-cta-solo').textContent = data.cta_label + ' \u2192';
+      if (data.cta_link) $('story-cta-solo').setAttribute('href', data.cta_link);
     }
   });
 
