@@ -1,7 +1,7 @@
 # AYG Records Website — Project Package
 
-This is the complete, current state of the aygrecords.com site: three real
-pages (Home, Studio, Lil Rashee), the Decap CMS admin panel, and all real
+This is the complete, current state of the aygrecords.com site: four real
+pages (Home, Studio, Lil Rashee, Merch), the Decap CMS admin panel, and all real
 content and assets.
 
 ## File structure — every file belongs exactly where shown below
@@ -11,6 +11,7 @@ ayg-records-website/
 ├── index.html                        Homepage
 ├── studio.html                       Studio roadmap page
 ├── lil-rashee.html                   Lil Rashee artist page
+├── merch.html                        Merch page (products come from the CMS)
 ├── netlify.toml                      Tells Netlify how to publish the site
 ├── assets/
 │   ├── css/
@@ -20,6 +21,7 @@ ayg-records-website/
 │   │   └── hero-lil-rashee.png       Real hero/portrait photo, as supplied
 │   └── uploads/
 │       ├── hero-video.mp4            Live hero background video
+│       ├── switch-it-up-cover.png    Official Switch It Up cover art
 │       └── ayg-records-catalog.pdf   Downloadable artist catalog
 ├── admin/
 │   ├── index.html                    Decap CMS login/editor screen
@@ -31,6 +33,8 @@ ayg-records-website/
     │   └── story.yml                 "AYG Story" homepage teaser
     ├── studio/
     │   └── roadmap.yml               Studio page milestones
+    ├── merch/
+    │   └── products.yml              Merch page products
     ├── artists/
     │   ├── lil-rashee.md             Lil Rashee's bio/links
     │   └── ayg-records-llc.md        Label Instagram account info
@@ -38,7 +42,7 @@ ayg-records-website/
         └── press-kit.yml             Artist catalog download metadata
 ```
 
-**Important:** `index.html`, `studio.html`, `lil-rashee.html`, and
+**Important:** `index.html`, `studio.html`, `lil-rashee.html`, `merch.html`, and
 `netlify.toml` must sit directly at the repo root — never inside `content/`
 or any other folder. They are real pages people visit directly in a
 browser, not CMS data files.

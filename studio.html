@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Studio — AYG Records</title>
+<meta name="description" content="The real, ongoing story of how AYG Records built its studio from the ground up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  /* Page-specific additions — the roadmap layout */
+  .page-header{
+    padding:160px 0 60px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .page-header .eyebrow{ margin-bottom:10px; }
+  .page-header h1{ font-size:clamp(2.4rem, 6vw, 4rem); margin-bottom:18px; }
+  .page-header p{ color:var(--paper); opacity:0.78; max-width:60ch; line-height:1.65; }
+
+  .roadmap{ padding:72px 0; }
+  .milestone{
+    display:grid; grid-template-columns:1fr; gap:20px;
+    padding:36px 0; border-top:1px solid var(--hairline);
+  }
+  .milestone:first-child{ border-top:none; }
+  @media (min-width:800px){
+    .milestone{ grid-template-columns:180px 1fr; gap:40px; align-items:start; }
+  }
+  .milestone-label{
+    font-family:var(--display); font-size:1.3rem; letter-spacing:0.04em;
+    color:var(--ember); text-transform:uppercase;
+  }
+  .milestone h3{
+    font-family:var(--display); font-weight:400; font-size:1.7rem;
+    text-transform:uppercase; letter-spacing:0.2px; margin-bottom:10px;
+  }
+  .milestone p{ color:var(--paper); opacity:0.78; line-height:1.65; max-width:60ch; }
+  .milestone img{ margin-top:16px; max-width:100%; border:1px solid var(--hairline); }
+
+  .back-link{
+    display:inline-flex; align-items:center; gap:8px; margin-top:8px;
+    font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--smoke);
+  }
+  .back-link:hover{ color:var(--paper); }
+</style>
+</head>
+<body>
+
+<header class="hero-top" style="position:relative; background:var(--ink); border-bottom:1px solid var(--hairline);">
+  <a href="/" class="logo" aria-label="AYG Records, home">
+    <img src="/assets/images/ayg-logo.png" alt="AYG Records" onerror="this.outerHTML='<span class=&quot;logo-fallback&quot;>AYG</span>'">
+  </a>
+
+  <nav class="nav-desktop" aria-label="primary">
+    <a href="/">Home</a>
+    <a href="https://aygrecords.bandcamp.com/" target="_blank" rel="noopener">Music</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Artists <span class="caret" aria-hidden="true"></span></button>
+      <div class="nav-dropdown-menu">
+        <a href="/lil-rashee.html">Lil Rashee</a>
+      </div>
+    </div>
+    <a href="/studio.html" class="active">Studio</a>
+    <a href="/#story">About</a>
+    <a href="/merch.html">Merch</a>
+  </nav>
+
+  <div class="nav-social">
+    <a href="https://www.instagram.com/aygrecordsllc" aria-label="AYG Records on Instagram" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.06 1.1.05 1.8.22 2.4.46.65.25 1.2.6 1.75 1.14.5.5.85 1.1 1.1 1.75.25.6.4 1.3.46 2.4.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.22 1.8-.46 2.4a4.9 4.9 0 0 1-1.14 1.75 4.9 4.9 0 0 1-1.75 1.1c-.6.25-1.3.4-2.4.46-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.22-2.4-.46a4.9 4.9 0 0 1-1.75-1.14 4.9 4.9 0 0 1-1.1-1.75c-.25-.6-.4-1.3-.46-2.4C2 15 2 14.7 2 12s0-3 .06-4.1c.05-1.1.22-1.8.46-2.4.25-.65.6-1.2 1.14-1.75A4.9 4.9 0 0 1 5.4 2.6c.6-.25 1.3-.4 2.4-.46C8.9 2.06 9.2 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+    </a>
+  </div>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">&times;</button>
+  <a href="/">Home</a>
+  <a href="https://aygrecords.bandcamp.com/" target="_blank" rel="noopener">Music</a>
+  <span class="submenu-label">Artists</span>
+  <a href="/lil-rashee.html">Lil Rashee</a>
+  <a href="/studio.html">Studio</a>
+  <a href="/#story">About</a>
+  <a href="/merch.html">Merch</a>
+</div>
+
+<main>
+  <section class="page-header">
+    <div class="wrap">
+      <p class="eyebrow accent" id="page-eyebrow">THE AYG STORY</p>
+      <h1 id="page-headline">How we built the studio.</h1>
+      <p id="page-intro">AYG is an independent label building its own creative infrastructure — music, artists, performance, apparel — one piece at a time. This is the real, ongoing record of how the studio came together.</p>
+      <a href="/" class="back-link">&larr; Back home</a>
+    </div>
+  </section>
+
+  <section class="roadmap">
+    <div class="wrap" id="milestones-host">
+      <div class="milestone">
+        <div class="milestone-label">Day 1</div>
+        <div>
+          <h3>Just a closet</h3>
+          <p>Two days ago, this was just a closet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="about">
+  <div class="foot-social">
+    <a href="https://www.instagram.com/aygrecordsllc" aria-label="AYG Records on Instagram" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.06 1.1.05 1.8.22 2.4.46.65.25 1.2.6 1.75 1.14.5.5.85 1.1 1.1 1.75.25.6.4 1.3.46 2.4.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.22 1.8-.46 2.4a4.9 4.9 0 0 1-1.14 1.75 4.9 4.9 0 0 1-1.75 1.1c-.6.25-1.3.4-2.4.46-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.22-2.4-.46a4.9 4.9 0 0 1-1.75-1.14 4.9 4.9 0 0 1-1.1-1.75c-.25-.6-.4-1.3-.46-2.4C2 15 2 14.7 2 12s0-3 .06-4.1c.05-1.1.22-1.8.46-2.4.25-.65.6-1.2 1.14-1.75A4.9 4.9 0 0 1 5.4 2.6c.6-.25 1.3-.4 2.4-.46C8.9 2.06 9.2 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+    </a>
+  </div>
+  <p>&copy; 2026 AYG Records LLC. All rights reserved.</p>
+</footer>
+
+<!-- ============================================================
+     Reads content/studio/roadmap.yml at runtime, same live-editable
+     pattern as the homepage. Handles one level of "list of objects"
+     YAML (Decap's list-widget output) in addition to flat scalars —
+     still no external YAML library / CDN dependency.
+     ============================================================ -->
+<script>
+(function(){
+  function parseRoadmapYaml(text){
+    var lines = text.split('\n');
+    var out = { milestones: [] };
+    var current = null;
+
+    function unquote(v){
+      v = v.trim();
+      if ((v[0] === '"' && v[v.length-1] === '"') || (v[0] === "'" && v[v.length-1] === "'")) {
+        return v.slice(1, -1).replace(/\\n/g, '\n').replace(/\\"/g, '"');
+      }
+      return v;
+    }
+
+    lines.forEach(function(line){
+      var listItem = line.match(/^  - ([A-Za-z0-9_]+):\s*(.*)$/);
+      var nestedField = line.match(/^    ([A-Za-z0-9_]+):\s*(.*)$/);
+      var topField = line.match(/^([A-Za-z0-9_]+):\s*(.*)$/);
+
+      if (listItem) {
+        current = {};
+        out.milestones.push(current);
+        current[listItem[1]] = unquote(listItem[2]);
+      } else if (nestedField && current) {
+        current[nestedField[1]] = unquote(nestedField[2]);
+      } else if (topField && line[0] !== ' ') {
+        out[topField[1]] = unquote(topField[2]);
+      }
+    });
+    return out;
+  }
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  fetch('content/studio/roadmap.yml', { cache: 'no-store' })
+    .then(function(res){ return res.ok ? res.text() : Promise.reject(res.status); })
+    .then(parseRoadmapYaml)
+    .then(function(data){
+      if (data.eyebrow) $('page-eyebrow').textContent = data.eyebrow;
+      if (data.headline) $('page-headline').textContent = data.headline;
+      if (data.intro) $('page-intro').textContent = data.intro;
+
+      if (data.milestones && data.milestones.length) {
+        var host = $('milestones-host');
+        host.innerHTML = '';
+        data.milestones.forEach(function(m){
+          var el = document.createElement('div');
+          el.className = 'milestone';
+          var photoHtml = m.photo ? '<img src="' + m.photo.replace(/"/g,'&quot;') + '" alt="">' : '';
+          el.innerHTML =
+            '<div class="milestone-label">' + (m.label||'') + '</div>' +
+            '<div><h3>' + (m.heading||'') + '</h3><p>' + (m.body||'') + '</p>' + photoHtml + '</div>';
+          host.appendChild(el);
+        });
+      }
+    })
+    .catch(function(){ /* keep the markup already on the page */ });
+
+  // Mobile menu (same behavior as the homepage)
+  var toggle = $('nav-toggle'), menu = $('mobile-menu'), close = $('mobile-menu-close');
+  function openMenu(){ menu.classList.add('open'); toggle.setAttribute('aria-expanded','true'); }
+  function closeMenu(){ menu.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+  toggle.addEventListener('click', openMenu);
+  close.addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+})();
+</script>
+
+</body>
+</html>
