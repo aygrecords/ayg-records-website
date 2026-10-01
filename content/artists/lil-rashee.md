@@ -2,7 +2,7 @@
 name: Lil Rashee
 instagram: https://www.instagram.com/lilrashee?stkn=aDhvY2I5ano3enY4
 photo: "lil-rashee-hero.image.png"
-bio: WHO IS LIL RASHEE?
+bio: "WHO IS LIL RASHEE?
  Quote
 "I try to tell every business owner, producer, artist, coordinator, or engineer you must invest, You will have too brudda!
 It only cost $300 to start, $100 to drop"
@@ -19,6 +19,4 @@ Status
 Now represented through AYG Records LLC, Lil Rashee is building his catalog independently while continuing the management that started Aggravated Youngstas.
 
 Hook
-Imagine what this man and the creation behind Aggravated Youngstas would be a year from now, can you youngsta?.
-
----
+Imagine what this man and the creation behind Aggravated Youngstas would be a year from now, can you youngsta?."
