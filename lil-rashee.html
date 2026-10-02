@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lil Rashee — AYG Records</title>
+<meta name="description" content="Lil Rashee, Founder of AYG Records and self-made super star.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  .artist-header{
+    padding:150px 0 70px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .artist-grid{
+    display:grid; grid-template-columns:1fr; gap:36px; align-items:center;
+  }
+  @media (min-width:800px){
+    .artist-grid{ grid-template-columns:0.8fr 1.2fr; gap:56px; }
+  }
+  .artist-photo{
+    aspect-ratio:4/5;
+    background:var(--charcoal);
+    border:1px solid var(--hairline);
+    overflow:hidden;
+    max-width:420px;
+  }
+  .artist-photo img{ width:100%; height:100%; object-fit:cover; object-position:78% 25%; }
+  .artist-copy h1{ font-size:clamp(2.4rem, 6vw, 4rem); margin-bottom:14px; }
+  .artist-copy p.bio{ color:var(--paper); opacity:0.8; max-width:52ch; line-height:1.7; margin-bottom:24px; font-size:1.05rem; }
+  .artist-links{ display:flex; gap:14px; flex-wrap:wrap; }
+  .back-link{
+    display:inline-flex; align-items:center; gap:8px; margin-top:20px;
+    font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--smoke);
+  }
+  .back-link:hover{ color:var(--paper); }
+
+  .quote-block{
+    padding:56px 0; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+  }
+  .quote-block blockquote{
+    font-family:var(--display); font-weight:400;
+    font-size:clamp(1.5rem, 3.4vw, 2.3rem);
+    line-height:1.25; color:var(--paper); max-width:46ch;
+    border-left:3px solid var(--ember); padding-left:24px; margin:0 0 16px;
+  }
+  .quote-block cite{
+    display:block; padding-left:27px;
+    font-style:normal; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--smoke);
+  }
+
+  .bio-section{ padding:56px 0; border-bottom:1px solid var(--hairline); }
+  .bio-section p.body-text{ color:var(--paper); opacity:0.8; max-width:60ch; line-height:1.75; font-size:1rem; }
+
+  .hook-block{ padding:64px 0; text-align:center; }
+  .hook-block p{
+    font-family:var(--display); font-weight:400;
+    font-size:clamp(1.4rem, 3.2vw, 2rem); line-height:1.3;
+    color:var(--paper); max-width:40ch; margin-inline:auto;
+  }
+
+  .discog{ padding:72px 0; border-top:1px solid var(--hairline); }
+  .discog h2.section-title{ font-size:clamp(1.8rem, 3.6vw, 2.4rem); margin-bottom:32px; }
+  .discog-item{
+    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    padding:22px 0; border-top:1px solid var(--hairline);
+  }
+  .discog-item:first-of-type{ border-top:none; }
+  .discog-item h3{ font-family:var(--display); font-weight:400; font-size:1.4rem; text-transform:uppercase; }
+  .discog-item .meta{ color:var(--smoke); font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+
+<header class="hero-top" style="position:relative; background:var(--ink); border-bottom:1px solid var(--hairline);">
+  <a href="/" class="logo" aria-label="AYG Records, home">
+    <img src="/assets/images/ayg-logo.png" alt="AYG Records" onerror="this.outerHTML='<span class=&quot;logo-fallback&quot;>AYG</span>'">
+  </a>
+
+  <nav class="nav-desktop" aria-label="primary">
+    <a href="/">Home</a>
+    <a href="https://aygrecords.bandcamp.com/" target="_blank" rel="noopener">Music</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-toggle active" aria-haspopup="true" aria-expanded="false">Artists <span class="caret" aria-hidden="true"></span></button>
+      <div class="nav-dropdown-menu">
+        <a href="/lil-rashee.html">Lil Rashee</a>
+      </div>
+    </div>
+    <a href="/studio.html">Studio</a>
+    <a href="/#story">About</a>
+    <a href="/merch.html">Merch</a>
+  </nav>
+
+  <div class="nav-social">
+    <a href="https://www.instagram.com/aygrecordsllc" aria-label="AYG Records on Instagram" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.06 1.1.05 1.8.22 2.4.46.65.25 1.2.6 1.75 1.14.5.5.85 1.1 1.1 1.75.25.6.4 1.3.46 2.4.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.22 1.8-.46 2.4a4.9 4.9 0 0 1-1.14 1.75 4.9 4.9 0 0 1-1.75 1.1c-.6.25-1.3.4-2.4.46-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.22-2.4-.46a4.9 4.9 0 0 1-1.75-1.14 4.9 4.9 0 0 1-1.1-1.75c-.25-.6-.4-1.3-.46-2.4C2 15 2 14.7 2 12s0-3 .06-4.1c.05-1.1.22-1.8.46-2.4.25-.65.6-1.2 1.14-1.75A4.9 4.9 0 0 1 5.4 2.6c.6-.25 1.3-.4 2.4-.46C8.9 2.06 9.2 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+    </a>
+  </div>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">&times;</button>
+  <a href="/">Home</a>
+  <a href="https://aygrecords.bandcamp.com/" target="_blank" rel="noopener">Music</a>
+  <span class="submenu-label">Artists</span>
+  <a href="/lil-rashee.html">Lil Rashee</a>
+  <a href="/studio.html">Studio</a>
+  <a href="/#story">About</a>
+  <a href="/merch.html">Merch</a>
+</div>
+
+<main>
+  <section class="artist-header">
+    <div class="wrap artist-grid">
+      <div class="artist-photo">
+        <img id="artist-photo" src="assets/images/hero-lil-rashee.png" alt="Lil Rashee">
+      </div>
+      <div class="artist-copy">
+        <p class="eyebrow accent">Signed Artist</p>
+        <h1 id="artist-name">Lil Rashee</h1>
+        <p class="bio" id="artist-bio">Lil Rashee, Founder of AYG Records and self made super star</p>
+        <div class="artist-links">
+          <a href="https://www.instagram.com/lilrashee" id="artist-instagram" class="btn btn-secondary" target="_blank" rel="noopener">Instagram &rarr;</a>
+          <a href="https://aygrecords.bandcamp.com/" class="btn btn-primary" target="_blank" rel="noopener">Listen on Bandcamp &rarr;</a>
+        </div>
+        <a href="/" class="back-link">&larr; Back home</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-block" id="quote-section">
+    <div class="wrap">
+      <blockquote id="artist-quote">"I try to tell every business owner, producer, artist, coordinator, or engineer you must invest, You will have too brudda! It only cost $300 to start, $100 to drop"</blockquote>
+      <cite id="artist-quote-attribution">&mdash; Rashee C</cite>
+    </div>
+  </section>
+
+  <section class="bio-section" id="biography-section">
+    <div class="wrap">
+      <p class="eyebrow accent">Biography</p>
+      <p class="body-text" id="artist-biography">Behind the big doors of AYG Records LLC, Lil Rashee development into a creative identity built around independence, and real motivation was already established before he signed the deal for shares of the company. Rasheed Cestro represents the foundation that managed to get artists Lil Rashee and Cameron together.</p>
+    </div>
+  </section>
+
+  <section class="bio-section" id="genre-section">
+    <div class="wrap">
+      <p class="eyebrow accent">Rap Genre</p>
+      <p class="body-text" id="artist-genre">Through his music, Lil Rashee tracks engage motivational — energetic support and hype while creating records that listeners can connect with. His catalog moves between confidence, personal reflection, ambition, spirituality, and the fun-sometimes realities of everyday life.</p>
+    </div>
+  </section>
+
+  <section class="bio-section" id="status-section">
+    <div class="wrap">
+      <p class="eyebrow accent">Status</p>
+      <p class="body-text" id="artist-status">Now represented through AYG Records LLC, Lil Rashee is building his catalog independently while continuing the management that started Aggravated Youngstas.</p>
+    </div>
+  </section>
+
+  <section class="hook-block" id="hook-section">
+    <div class="wrap">
+      <p id="artist-hook">Imagine what this man and the creation behind Aggravated Youngstas would be a year from now, can you youngsta?</p>
+    </div>
+  </section>
+
+  <section class="discog">
+    <div class="wrap">
+      <h2 class="section-title">Discography</h2>
+      <div class="discog-item">
+        <div>
+          <h3>Switch It Up</h3>
+          <div class="meta">Lil Rashee &middot; AYG Records</div>
+        </div>
+        <a href="https://www.youtube.com/watch?v=nxCscum9fw4" class="btn btn-secondary" target="_blank" rel="noopener">Listen &rarr;</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="about">
+  <div class="foot-social">
+    <a href="https://www.instagram.com/aygrecordsllc" aria-label="AYG Records on Instagram" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.06 1.1.05 1.8.22 2.4.46.65.25 1.2.6 1.75 1.14.5.5.85 1.1 1.1 1.75.25.6.4 1.3.46 2.4.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.22 1.8-.46 2.4a4.9 4.9 0 0 1-1.14 1.75 4.9 4.9 0 0 1-1.75 1.1c-.6.25-1.3.4-2.4.46-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.22-2.4-.46a4.9 4.9 0 0 1-1.75-1.14 4.9 4.9 0 0 1-1.1-1.75c-.25-.6-.4-1.3-.46-2.4C2 15 2 14.7 2 12s0-3 .06-4.1c.05-1.1.22-1.8.46-2.4.25-.65.6-1.2 1.14-1.75A4.9 4.9 0 0 1 5.4 2.6c.6-.25 1.3-.4 2.4-.46C8.9 2.06 9.2 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+    </a>
+  </div>
+  <p>&copy; 2026 AYG Records LLC. All rights reserved.</p>
+</footer>
+
+<!-- ============================================================
+     Reads content/artists/lil-rashee.md (frontmatter) at runtime,
+     same live-editable pattern as the rest of the site.
+     ============================================================ -->
+<script>
+(function(){
+  function parseFrontmatter(text){
+    var m = text.match(/^---\s*\n([\s\S]*?)\n---/);
+    var out = {};
+    if (!m) return out;
+    m[1].split('\n').forEach(function(line){
+      var fm = line.match(/^([A-Za-z0-9_]+):\s*(.*)$/);
+      if (!fm) return;
+      var key = fm[1], val = fm[2].trim();
+      if ((val[0] === '"' && val[val.length-1] === '"')) val = val.slice(1,-1);
+      out[key] = val;
+    });
+    return out;
+  }
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  fetch('content/artists/lil-rashee.md', { cache: 'no-store' })
+    .then(function(res){ return res.ok ? res.text() : Promise.reject(res.status); })
+    .then(parseFrontmatter)
+    .then(function(data){
+      if (data.name) { $('artist-name').textContent = data.name; document.title = data.name + ' — AYG Records'; }
+      if (data.bio) $('artist-bio').textContent = data.bio;
+      if (data.instagram) $('artist-instagram').setAttribute('href', data.instagram);
+      // "photo" is only used if it's an actual uploaded image path (not plain text)
+      if (data.photo && /^\/?assets\//.test(data.photo)) {
+        $('artist-photo').src = data.photo;
+      }
+
+      // Each extra bio section hides itself if its field is ever left empty via the CMS
+      function fillOrHide(sectionId, textId, text){
+        if (text) { $(textId).textContent = text; }
+        else { $(sectionId).style.display = 'none'; }
+      }
+      if (data.quote) {
+        $('artist-quote').textContent = '\u201C' + data.quote + '\u201D';
+        $('artist-quote-attribution').textContent = data.quote_attribution ? '\u2014 ' + data.quote_attribution : '';
+      } else {
+        $('quote-section').style.display = 'none';
+      }
+      fillOrHide('biography-section', 'artist-biography', data.biography);
+      fillOrHide('genre-section', 'artist-genre', data.genre_text);
+      fillOrHide('status-section', 'artist-status', data.status_text);
+      fillOrHide('hook-section', 'artist-hook', data.hook_text);
+    })
+    .catch(function(){ /* keep the markup already on the page */ });
+
+  var toggle = $('nav-toggle'), menu = $('mobile-menu'), close = $('mobile-menu-close');
+  function openMenu(){ menu.classList.add('open'); toggle.setAttribute('aria-expanded','true'); }
+  function closeMenu(){ menu.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+  toggle.addEventListener('click', openMenu);
+  close.addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+})();
+</script>
+
+</body>
+</html>
