@@ -7,8 +7,6 @@ bio: "WHO IS LIL RASHEE?
 I try to tell every business owner, producer, artist, coordinator, or engineer you must invest, You will have too brudda!
 It only cost $300 to start, $100 to drop
 
-- Rashee C
-
 Biography 
  Behind the big doors of AYG Records LLC, Lil Rashee development into a creative identity built around independence, and real motivation was already established before he signed the deal for shares of the company. Rasheed Cestro represents the foundation that managed to get artists Lil Rashee and Cameron together.
 
