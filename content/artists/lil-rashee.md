@@ -4,8 +4,8 @@ instagram: https://www.instagram.com/lilrashee?stkn=aDhvY2I5ano3enY4
 photo: "hero-lil-rashee.png"
 bio: "WHO IS LIL RASHEE?
  Quote
-"I try to tell every business owner, producer, artist, coordinator, or engineer you must invest, You will have too brudda!
-It only cost $300 to start, $100 to drop"
+I try to tell every business owner, producer, artist, coordinator, or engineer you must invest, You will have too brudda!
+It only cost $300 to start, $100 to drop
 
 - Rashee C
 
