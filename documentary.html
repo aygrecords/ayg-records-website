@@ -4,225 +4,597 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c0c0d">
+  <meta name="description" content="The official AYG Records LLC documentary. Independent vision. Built with purpose.">
+  <title>Documentary | AYG Records LLC</title>
 
-  <title>About | AYG Records LLC</title>
-  <meta name="description"
-        content="Discover AYG Records LLC through our documentary.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #090909;
-      --panel: #141414;
-      --red: #c8202f;
-      --text: #f5f2ed;
-      --muted: #aaa6a1;
+      --ink: #0c0c0d;
+      --charcoal: #1a1917;
+      --charcoal-2: #242220;
+      --paper: #ece7dd;
+      --smoke: #948e80;
+      --ember: #c1541c;
+      --ember-dim: #7a3712;
+      --hairline: rgba(236, 231, 221, 0.12);
+      --display: 'Bebas Neue', sans-serif;
+      --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --max: 1280px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--ink);
+    }
 
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      min-height: 100vh;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--body);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
     }
 
-    a { color: inherit; }
-
-    header {
-      border-bottom: 1px solid #292929;
-      padding: 18px 6%;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    nav {
-      max-width: 1100px;
-      margin: auto;
+    a:focus-visible,
+    button:focus-visible,
+    video:focus-visible {
+      outline: 2px solid var(--ember);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--max);
+      margin-inline: auto;
+      padding-inline: 24px;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      background: var(--ink);
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .header-inner {
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 24px;
     }
 
-    .brand {
-      color: var(--text);
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-decoration: none;
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
     }
 
-    .brand span { color: var(--red); }
+    .logo img {
+      display: block;
+      width: auto;
+      height: 38px;
+      max-width: 190px;
+      object-fit: contain;
+    }
 
-    .nav-links {
+    .logo-text {
+      font-family: var(--display);
+      font-size: 1.8rem;
+      line-height: 1;
+      letter-spacing: 0.04em;
+      color: var(--paper);
+    }
+
+    .desktop-nav {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 22px;
+      gap: 1.6rem;
     }
 
-    .nav-links a {
-      font-size: .92rem;
-      text-decoration: none;
-      color: var(--muted);
+    .desktop-nav a {
+      padding: 8px 0;
+      color: var(--paper);
+      opacity: 0.82;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
     }
 
-    .nav-links a:hover,
-    .nav-links a[aria-current="page"] {
-      color: white;
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
+      opacity: 1;
+      border-bottom-color: var(--ember);
     }
 
-    main {
-      width: min(100% - 36px, 1000px);
-      margin: auto;
-      padding: 76px 0;
+    /* MOBILE NAVIGATION */
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--hairline);
+      background: var(--charcoal);
+      color: var(--paper);
+      padding: 10px 14px;
+      font-family: var(--body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      padding: 8px 24px 24px;
+      border-top: 1px solid var(--hairline);
+      background: var(--ink);
+    }
+
+    .mobile-nav.open {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .mobile-nav a {
+      padding: 15px 0;
+      color: var(--paper);
+      font-family: var(--display);
+      font-size: 1.55rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .mobile-nav a.active {
+      color: var(--ember);
+    }
+
+    /* PAGE INTRO */
+    .page-intro {
+      position: relative;
+      padding-top: clamp(64px, 10vw, 124px);
+      padding-bottom: clamp(42px, 6vw, 72px);
+      overflow: hidden;
+      border-bottom: 1px solid var(--hairline);
+      background:
+        radial-gradient(ellipse at 85% 0%, rgba(193, 84, 28, 0.12), transparent 45%),
+        linear-gradient(180deg, var(--charcoal), var(--ink));
     }
 
     .eyebrow {
-      color: var(--red);
-      font-size: .78rem;
-      font-weight: bold;
-      letter-spacing: 3px;
+      margin-bottom: 16px;
+      color: var(--ember);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--display);
+      font-weight: 400;
       text-transform: uppercase;
     }
 
     h1 {
-      margin: 12px 0;
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      line-height: 1.05;
-      letter-spacing: -2px;
+      max-width: 950px;
+      font-size: clamp(3.2rem, 9vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: 0.015em;
     }
 
-    .intro {
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 1.1rem;
-      margin: 20px 0 40px;
+    .intro-copy {
+      max-width: 650px;
+      margin-top: 24px;
+      color: var(--paper);
+      opacity: 0.78;
+      font-size: clamp(0.95rem, 2vw, 1.08rem);
+      line-height: 1.8;
+    }
+
+    .intro-rule {
+      width: 64px;
+      height: 3px;
+      margin-top: 30px;
+      background: var(--ember);
+    }
+
+    /* DOCUMENTARY PLAYER */
+    .documentary-section {
+      padding-top: clamp(40px, 7vw, 84px);
+      padding-bottom: clamp(56px, 9vw, 110px);
+    }
+
+    .section-heading {
+      margin-bottom: 22px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1;
+    }
+
+    .section-label {
+      color: var(--smoke);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: right;
     }
 
     .documentary {
-      padding: 12px;
-      background: var(--panel);
-      border: 1px solid #292929;
-      border-radius: 12px;
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid rgba(236, 231, 221, 0.2);
+      background: #000;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.4);
     }
 
-    video {
+    .documentary video {
       display: block;
       width: 100%;
       height: auto;
+      min-height: 200px;
+      max-height: 78vh;
       aspect-ratio: 16 / 9;
+      object-fit: contain;
       background: #000;
-      border-radius: 6px;
     }
 
     .video-caption {
-      padding: 14px 6px 4px;
-      color: var(--muted);
-      font-size: .9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--charcoal);
+      border-top: 1px solid var(--hairline);
     }
 
+    .caption-title {
+      color: var(--paper);
+      font-family: var(--display);
+      font-size: clamp(1.15rem, 3vw, 1.65rem);
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+    }
+
+    .caption-tag {
+      color: var(--ember);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    .direct-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 22px;
+      padding: 14px 20px;
+      border: 1px solid rgba(236, 231, 221, 0.42);
+      color: var(--paper);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .direct-link:hover {
+      border-color: var(--ember);
+      background: var(--ember-dim);
+    }
+
+    /* ABOUT COPY */
     .about-copy {
-      max-width: 720px;
-      margin-top: 48px;
+      padding: clamp(48px, 8vw, 90px) 0;
+      border-top: 1px solid var(--hairline);
+      background: var(--charcoal);
     }
 
-    h2 { font-size: 1.6rem; }
-
-    .about-copy p { color: var(--muted); }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 18px;
-      color: white;
-      text-decoration-color: var(--red);
-      text-underline-offset: 5px;
+    .about-inner {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: clamp(28px, 6vw, 80px);
+      align-items: start;
     }
 
-    footer {
-      padding: 24px 18px;
-      border-top: 1px solid #292929;
-      text-align: center;
-      color: var(--muted);
-      font-size: .85rem;
+    .about-heading {
+      color: var(--smoke);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
     }
 
-    @media (max-width: 600px) {
-      header { padding: 16px 18px; }
+    .about-text h2 {
+      margin-bottom: 22px;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1;
+    }
 
-      nav {
+    .about-text p {
+      max-width: 680px;
+      margin-bottom: 18px;
+      color: var(--paper);
+      opacity: 0.78;
+      font-size: 0.98rem;
+      line-height: 1.9;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-accent {
+      color: var(--ember);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--hairline);
+      background: var(--ink);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      color: var(--smoke);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-link {
+      color: var(--paper);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer-link:hover {
+      color: var(--ember);
+    }
+
+    @media (max-width: 899px) {
+      .header-inner {
+        min-height: 72px;
+      }
+
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap {
+        padding-inline: 20px;
+      }
+
+      .logo img {
+        height: 32px;
+        max-width: 150px;
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+      }
+
+      .section-heading {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .nav-links { gap: 16px; }
+      .section-label {
+        text-align: left;
+      }
 
-      main { padding: 48px 0; }
+      .video-caption {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+        padding: 16px;
+      }
 
-      h1 { letter-spacing: -1px; }
+      .caption-tag {
+        text-align: left;
+      }
+
+      .documentary video {
+        min-height: 190px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <nav aria-label="Main navigation">
-      <a class="brand" href="/index.html">
-        <span>AYG</span> RECORDS
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="/" aria-label="AYG Records home">
+        <img src="/assets/images/ayg-logo.png" alt="AYG Records"
+             onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
+        <span class="logo-text" hidden>AYG RECORDS</span>
       </a>
 
-      <div class="nav-links">
-        <a href="/index.html">Home</a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/documentary.html" class="active" aria-current="page">About</a>
+        <a href="/artists.html">Artists</a>
         <a href="/studio.html">Studio</a>
-      </div>
+        <a href="/downloads.html">Downloads</a>
+        <a href="/merch.html">Merch</a>
+      </nav>
+
+      <button class="menu-toggle" type="button"
+              aria-expanded="false" aria-controls="mobile-nav"
+              onclick="toggleMobileNav(this)">
+        Menu
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="/">Home</a>
+      <a href="/documentary.html" class="active" aria-current="page">About</a>
+      <a href="/artists.html">Artists</a>
+      <a href="/studio.html">Studio</a>
+      <a href="/downloads.html">Downloads</a>
+      <a href="/merch.html">Merch</a>
     </nav>
   </header>
 
   <main>
-    <p class="eyebrow">Behind the label</p>
-
-    <h1>About AYG Records</h1>
-
-    <p class="intro">
-      Go behind the scenes with AYG Records LLC.
-      Watch our documentary for a closer look at the work,
-      creativity, and process behind the label.
-    <section class="documentary" aria-label="AYG Records documentary">
-      <video controls preload="metadata"
-             playsinline
-             width="100%"
-             aria-label="AYG Records documentary">
-        <source
-          src="/assets/uploads/documentary.mp4"
-          type="video/mp4">
-        Your browser cannot play this video.
-        <a href="/assets/uploads/documentary.mp4">
-          Open the documentary MP4 directly.
-        </a>
-      </video>
-
-      <div class="video-caption">
-        AYG Records LLC — Official Documentary
+    <section class="page-intro">
+      <div class="wrap">
+        <p class="eyebrow">Behind the label</p>
+        <h1>About AYG Records</h1>
+        <p class="intro-copy">
+          Independent vision. Built with purpose. Discover the work,
+          ambition, and story behind AYG Records LLC.
+        </p>
+        <div class="intro-rule" aria-hidden="true"></div>
       </div>
     </section>
-      <p>
-        AYG Records LLC is building its own path through music,
-        creative production, and artist development. This page
-        is dedicated to sharing the story behind the label.
-      </p>
 
-      <a class="back-link" href="/index.html">
-        ← Back to AYG Records
-      </a>
+    <section class="documentary-section">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>The Documentary</h2>
+          <p class="section-label">AYG Records LLC · Official Film</p>
+        </div>
+
+        <div class="documentary">
+          <video controls preload="metadata" playsinline
+                 aria-label="AYG Records official documentary">
+            <source src="/assets/uploads/documentary.mp4" type="video/mp4">
+            Your browser cannot play this video.
+          </video>
+
+          <div class="video-caption">
+            <span class="caption-title">AYG Records LLC — Official Documentary</span>
+            <span class="caption-tag">Independent vision</span>
+          </div>
+        </div>
+
+        <a class="direct-link" href="/assets/uploads/documentary.mp4">
+          Open documentary video directly
+        </a>
+      </div>
+    </section>
+
+    <section class="about-copy">
+      <div class="wrap about-inner">
+        <p class="about-heading">Our vision</p>
+
+        <div class="about-text">
+          <h2>Independent vision.<br><span class="about-accent">Built with purpose.</span></h2>
+          <p>
+            AYG Records LLC is an independent record label built around
+            creativity, ownership, and a commitment to developing music
+            with purpose.
+          </p>
+          <p>
+            Every release, performance, and project is part of a larger
+            vision: build intentionally, create consistently, and grow
+            the label through the work.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    © <span id="year"></span> AYG Records LLC. All rights reserved.
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="footer-brand" href="/">AYG Records LLC</a>
+      <p class="footer-copy">© <span id="year"></span> AYG Records LLC. All rights reserved.</p>
+      <a class="footer-link" href="/">Back to home</a>
+    </div>
   </footer>
 
   <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    function toggleMobileNav(button) {
+      const menu = document.getElementById('mobile-nav');
+      const isOpen = menu.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(isOpen));
+      button.textContent = isOpen ? 'Close' : 'Menu';
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
